@@ -1,0 +1,54 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+{{end}}
+
+<div class="main_content">
+
+  <p>
+    <a href="{{=URL('default', 'add')}}" class="btn">Add Post</a>
+  </p>
+
+{{for r in rows:}}
+  <div class="post">
+    <div class="author">Author: {{=r['post_author']}}</div>
+    <div class="title">Title: {{=r['post_title']}}</div>
+    <div class="content">Content: {{=r['post_content']}}</div>
+
+    <div class="button_row">
+      {{if auth.user is not None and auth.user.email == r['post_author']:}}
+        <a href="{{=URL('default', 'edit', args=[r['id']])}}" class="btn">
+          <i class="fa fa-pencil-square-o"></i> Edit
+        </a>
+      {{pass}}
+      {{if auth.user is not None:}}
+        <a href="{{=URL('default', 'add_reply', args=[r['id']])}}" class="btn">
+          <i class="fa fa-plus"></i> Reply
+        </a>
+      {{pass}}
+    </div>
+
+    <!-- Here we display the replies.  If you are the author of a reply, you can edit/delete it. -->
+      {{for reply in r['reply_list']:}}
+        <div class="reply">
+          <!-- Display here a reply -->
+          <div class="reply_author">Author: {{=reply['reply_author']}}</div>
+          <div class="reply_content">Content: {{=reply['reply_content']}}</div>
+          {{if auth.user is not None and auth.user.email == reply['reply_author']:}}
+            <div class="reply options">
+              <a href="{{=URL('default', 'edit_reply', args=[reply['reply_id']], user_signature=True)}}" class="btn">
+                <i class="fa fa-pencil-square-o"></i> Edit
+              </a>
+              <a href="{{=URL('default', 'delete_reply', args=[reply['reply_id']], user_signature=True)}}" class="btn">
+                <i class="fa fa-trash-o"></i> Delete
+              </a>
+            </div>
+          {{pass}}
+        </div>
+
+      {{pass}}
+  </div>
+{{pass}}
+
+</div>
+

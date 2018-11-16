@@ -1,0 +1,110 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
+    var get_post_list_url = "{{=URL('api', 'get_post_list')}}";
+    // Like callbacks.
+    var set_like_url = "{{=URL('api', 'set_like', user_signature=True)}}";
+    var set_upvote_url = "{{=URL('api', 'set_upvote', user_signature=True)}}";
+    var set_downvote_url = "{{=URL('api', 'set_downvote', user_signature=True)}}";
+    var get_likers_url = "{{=URL('api', 'get_likers')}}";
+    // Stars.
+    var set_stars_url = "{{=URL('api', 'set_stars', user_signature=True)}}";
+    var is_logged_in = {{='false' if auth.user is None else 'true'}};
+    var hidden = true
+</script>
+<script type="text/javascript">
+  function toggle() {
+    var x = document.getElementById("add_post");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+  function mouseOverThumb() {
+    var x = document.getElementByClassName("toggle_upvote")
+    x.style.color = gray;
+  }
+</script>
+
+<style type="text/css">
+  #mouseOverThumb:hover{
+    color: red;
+  }
+
+</style>
+{{end}}
+
+<div class="main_content">
+
+    <div id="vue-div" class="display:none">
+      <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
+
+      <!-- First, let's add a form to insert blog posts. -->
+      <button onclick="toggle()">ADD POST</button>
+      <div  v-if="hidden"  id="add_post" style="display:none">
+        <div class="container form_row">
+          <div class="label quarter">
+            Title:
+          </div>
+          <div class="form threequarters">
+            <input v-model="form_title" placeholder="Enter the post title"/>
+          </div>
+        </div>
+        <div class="container form_row">
+          <div class="label quarter">
+            Content:
+          </div>
+          <div class="form threequarters">
+            <textarea v-model="form_content" placeholder="Enter the content of your post"></textarea>
+          </div>
+        </div>
+        <div class="container form_row"><div class="quarter"></div>
+          <div class="threequarters">
+            <div class="submit">
+              <button id="add-post" v-on:click="add_post" onclick="toggle()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message in case there are no posts. -->
+      <div v-if="post_list.length === 0">There are no posts.</div>
+
+      <!-- We display the posts. -->
+      <div id="post_list">
+        <div class="post_div" v-for="post in post_list">
+          <div class="post_title">${post.post_title}</div>
+          <div class="post_content">${post.post_content}</div>
+          <div class="attributes">
+
+            <div class="upvote">
+                <span v-if="is_logged_in" class="toggle_upvote"
+                      v-on:mouseover="upvote_mouseover(post._idx)"
+                      onmouseover="mouseOverThumb()"
+                      v-on:mouseout="like_mouseout(post._idx)"
+                      v-on:click="upvote(post._idx)">
+                  <i v-if="post.upvoted" class="fa fa-thumbs-up" style="color: black" v-bind:class="{changed: post._upvoted === post.upvoted}"></i>
+                  <i v-if="!post.upvoted" class="fa fa-thumbs-o-up" style="color: black" v-bind:class="{changed: post._upvoted === post.upvoted}"></i>
+                </span>
+                <span v-if="is_logged_in" class="toggle_downvote"
+                      v-on:mouseover="downvote_mouseover(post._idx)"
+                      v-on:mouseout="like_mouseout(post._idx)"
+                      v-on:click="downvote(post._idx)">
+                  <i v-if="post.downvoted" class="fa fa-thumbs-down" style="color: black" v-bind:class="{changed: post._downvoted === post.downvoted}"></i>
+                  <i v-if="!post.downvoted" class="fa fa-thumbs-o-down" style="color: black" v-bind:class="{changed: post._downvoted === post.downvoted}"></i>
+                  <i class="score" v-bind:class="{changed: post._score === !post.score}">${post._score}</i>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+</div>
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>

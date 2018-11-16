@@ -1,0 +1,31 @@
+/* line 1, ../sass/_main.scss */
+div.main_content {
+  padding: 10px;
+}
+/* line 4, ../sass/_main.scss */
+div.main_content div.post {
+  padding: 20px;
+
+  background-color: #dddddd;
+  margin: 10px;
+}
+/* line 9, ../sass/_main.scss */
+div.main_content div.post div.thumb_div {
+  margin: 5px;
+}
+
+div.main_content div.reply{
+  padding: 20px;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+div.main_content div.options{
+  padding: 5px;
+}
+
+div.main_content div.button_row{
+  margin: 5px
+}

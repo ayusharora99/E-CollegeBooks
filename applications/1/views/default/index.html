@@ -1,0 +1,224 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
+    var get_post_list_url = "{{=URL('api', 'get_post_list')}}";
+    // Like callbacks.
+    var set_thumb_url = "{{=URL('api', 'set_thumb', user_signature=True)}}";
+    var get_likers_url = "{{=URL('api', 'get_likers')}}";
+    // Stars.
+    var set_stars_url = "{{=URL('api', 'set_stars', user_signature=True)}}";
+    var get_thumb_url = "{{=URL('api', 'thumbCount')}}";
+    var is_logged_in = {{='false' if auth.user is None else 'true'}};
+</script>
+{{end}}
+
+<div class="main_content">
+
+    <div id="vue-div" class="display:none">
+      <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
+
+      <!-- First, let's add a form to insert blog posts. -->
+        <div v-if = "!showing">
+            <button id = "display-form" v-on:click="show_form">Add Post</button>
+        </div>
+      <template v-if = "showing" id="add_post" style="display:none">
+        <div class="container form_row">
+          <div class="label quarter">
+            Title:
+          </div>
+          <div class="form threequarters">
+            <input v-model="form_title" placeholder="Enter the post title"/>
+          </div>
+        </div>
+        <div class="container form_row">
+          <div class="label quarter">
+            Content:
+          </div>
+          <div class="form threequarters">
+            <textarea v-model="form_content" placeholder="Enter the content of your post"></textarea>
+          </div>
+        </div>
+        <div class="container form_row"><div class="quarter"></div>
+          <div class="threequarters">
+            <div class="submit">
+              <button id="add-post" v-on:click="add_post">Submit</button>
+            </div>
+          </div>
+        </div>
+      </template>
+
+
+
+      <!-- Message in case there are no posts. -->
+      <div v-if="post_list.length === 0">There are no posts.</div>
+
+      <!-- We display the posts. -->
+      <div id="post_list">
+        <div class="post_div" v-for="post in post_list">
+          <div class="post_title">${post.post_title}</div>
+          <div class="post_content">${post.post_content}</div>
+          <div class="attributes">
+
+            <!-- Code for Thumbs. -->
+              <div v-if="post.thumb == null">
+                  ${countThumb(post.id)}
+                  <div v-if="post._thumb == null">
+                    <i class="fa fa-thumbs-o-up"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')"
+                    >
+                    </i>
+                      <i class="fa fa-thumbs-o-down"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+
+                  <div v-if="post._thumb == 'u' ">
+                      <i class="fa fa-thumbs-up"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')">
+                      </i>
+                      <i class="fa fa-thumbs-o-down gray"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+
+                  <div v-if="post._thumb == 'd' ">
+                      <i class="fa fa-thumbs-o-up gray"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')">
+                      </i>
+                      <i class="fa fa-thumbs-down"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+              </div>
+
+              <div v-if="post.thumb == 'u'">
+                 ${countThumb(post.id)}
+                  <div v-if="post._thumb == null">
+                    <i class="fa fa-thumbs-up"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')"
+                    >
+                    </i>
+                      <i class="fa fa-thumbs-o-down"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+
+                  <div v-if="post._thumb == 'u' ">
+                      <i class="fa fa-thumbs-up"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')">
+                      </i>
+                      <i class="fa fa-thumbs-o-down gray"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+
+                  <div v-if="post._thumb == 'd' ">
+                      <i class="fa fa-thumbs-o-up gray"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')">
+                      </i>
+                      <i class="fa fa-thumbs-down"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+              </div>
+
+              <div v-if="post.thumb == 'd'">
+                  ${countThumb(post.id)}
+                  <div v-if="post._thumb == null">
+                    <i class="fa fa-thumbs-o-up"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')"
+                    >
+                    </i>
+                      <i class="fa fa-thumbs-down"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+
+                  <div v-if="post._thumb == 'u' ">
+                      <i class="fa fa-thumbs-up"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')">
+                      </i>
+                      <i class="fa fa-thumbs-o-down gray"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+
+                  <div v-if="post._thumb == 'd' ">
+                      <i class="fa fa-thumbs-o-up gray"
+                        v-on:click="change_thumb(post.id,'u')"
+                        v-on:mouseover= "thumb_mouseover(post.id, 'u')"
+                        v-on:mouseout= "thumb_mouseout(post.id, 'u')">
+                      </i>
+                      <i class="fa fa-thumbs-down"
+                       v-on:click="change_thumb(post.id,'d')"
+                       v-on:mouseover= "thumb_mouseover(post.id, 'd')"
+                       v-on:mouseout= "thumb_mouseout(post.id, 'd')"
+                      >
+                      </i>
+                      ${post.thumb_count}
+                  </div>
+              </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+</div>
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>
