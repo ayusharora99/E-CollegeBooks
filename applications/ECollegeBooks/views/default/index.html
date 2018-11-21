@@ -6,14 +6,14 @@
 <div class="main_content">
 
   <p>
-    <a href="{{=URL('default', 'add')}}" class="btn">Add Post</a>
+    <a href="{{=URL('default', 'add')}}" class="btn">New For Sale Post</a>
   </p>
 
 {{for r in rows:}}
   <div class="post">
-    <div class="author">Author: {{=r['post_author']}}</div>
-    <div class="title">Title: {{=r['post_title']}}</div>
-    <div class="content">Content: {{=r['post_content']}}</div>
+    <span class="post_content_descriptions">Seller: </span><span>{{=r['post_author']}}</span><br/>
+    <span class="post_content_descriptions">Book Title: </span><span>{{=r['post_title']}}</span><br/>
+    <span class="post_content_descriptions">Price: </span><span>{{=r['post_content']}}</span><br/>
 
     <div class="button_row" style="padding: 5px;">
       {{if auth.user is not None and auth.user.email == r['post_author']:}}
@@ -39,8 +39,8 @@
       {{for reply in r['reply_list']:}}
         <div class="reply">
           <!-- Display here a reply -->
-          <div class="reply_author" style="text-indent: 45px;">Author: {{=reply['reply_author']}}</div>
-          <div class="reply_content" style="text-indent: 45px;">Content: {{=reply['reply_content']}}</div>
+          <span class="reply_content_descriptions">Seller: </span><span>{{=reply['reply_author']}}</span><br/>
+          <span class="reply_content_descriptions">Book: </span><span>{{=reply['reply_content']}}</span><br/>
           {{if auth.user is not None and auth.user.email == reply['reply_author']:}}
             <div class="reply options"  style="padding: 5px;">
               <a href="{{=URL('default', 'edit_reply', args=[reply['reply_id']], user_signature=True)}}" class="btn">
