@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aad8dbce-b8c9-4cf8-a448-e39cb24b270e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/applications/welcome/ABOUT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/controllers/appadmin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/controllers/default.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/cron/crontab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/cron/crontab.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/c8b669d15150d7109e5f7ab36744a5b7_auth_cas.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/c8b669d15150d7109e5f7ab36744a5b7_auth_event.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/c8b669d15150d7109e5f7ab36744a5b7_auth_group.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/c8b669d15150d7109e5f7ab36744a5b7_auth_membership.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/c8b669d15150d7109e5f7ab36744a5b7_auth_permission.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/c8b669d15150d7109e5f7ab36744a5b7_auth_user.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/sql.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/databases/storage.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/ar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/ca.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/cs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/de.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/en.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/es.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/fr-ca.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/fr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/hi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/hu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/it.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/my-mm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/my.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/nl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/pl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/plural-cs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/plural-en.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/plural-es.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/plural-ru.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/plural-uk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/pt-br.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/pt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/ro.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/ru.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/sk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/tr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/uk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/zh-cn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/zh-tw.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/languages/zh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/models/db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/models/menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/modules/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/private/appconfig.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/routes.example.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/403.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/503.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/css/calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/css/web2py-bootstrap4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/css/web2py.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/images/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/images/gplus-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/images/twitter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/analytics.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/modernizr-2.8.3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/web2py-bootstrap4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/static/js/web2py.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/appadmin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/default/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/default/user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.ics" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.jsonp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.load" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.rss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/generic.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/welcome/views/web2py_ajax.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deposit/web2py.app.3.w2p" beforeDir="false" afterPath="$PROJECT_DIR$/deposit/web2py.app.3.w2p" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deposit/web2py.app.4.w2p" beforeDir="false" afterPath="$PROJECT_DIR$/deposit/web2py.app.4.w2p" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deposit/web2py.app.5.w2p" beforeDir="false" afterPath="$PROJECT_DIR$/deposit/web2py.app.5.w2p" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deposit/web2py.app.MyTest.w2p" beforeDir="false" afterPath="$PROJECT_DIR$/deposit/web2py.app.MyTest.w2p" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deposit/web2py.app.web2py_start.w2p" beforeDir="false" afterPath="$PROJECT_DIR$/deposit/web2py.app.web2py_start.w2p" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver.log" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver.pid" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameters_8000.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameters_8000.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-74633817">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="width" value="1014" />
+    <option name="height" value="1032" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="E-CollegeBooks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-CollegeBooks" type="57c3d0a0:Web2PyBaseDirNode" />
+            </path>
+            <path>
+              <item name="E-CollegeBooks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-CollegeBooks" type="57c3d0a0:Web2PyBaseDirNode" />
+              <item name="applications" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="E-CollegeBooks" type="PythonConfigurationType" factoryName="Python" singleton="true">
+      <module name="E-CollegeBooks" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web2py.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aad8dbce-b8c9-4cf8-a448-e39cb24b270e" name="Default Changelist" comment="" />
+      <created>1542830818040</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542830818040</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>
