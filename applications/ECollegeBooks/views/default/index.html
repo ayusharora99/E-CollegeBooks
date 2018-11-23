@@ -37,8 +37,6 @@
 
     <!-- Here we display the replies.  If you are the author of a reply, you can edit/delete it. -->
       {{for reply in r['reply_list']:}}
-      {{pass}}
-      {{if auth.user is not None:}}
         <div class="reply">
           <!-- Display here a reply -->
           <span class="reply_content_descriptions">Seller: </span><span>{{=reply['reply_author']}}</span><br/>
