@@ -1,5 +1,5 @@
 a {color:#111111}
-a:not(.btn):not(.noeffect):hover {color:#ea4c89}
+a:not(.btn):not(.noeffect):hover {color:#C0C0C0}
 a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
 .btn, button, [type=button], [type=submit] {
    background-color:#ea4c89;
@@ -74,5 +74,5 @@ a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
 }
 
 .adi_image {
-   opacity: 1;
+   /* opacity: 1; */
 }

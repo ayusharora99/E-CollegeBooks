@@ -14,10 +14,14 @@ div.main_content div.form_row {
 }
 /* line 13, ../sass/_main.scss */
 div.main_content div.post_div {
-  margin: 4px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  margin-right: 35px;
   border: 1px black solid;
   background-color: #eeeeee;
   padding: 4px;
+  border-radius: 6px;
+  padding: 10px;
 }
 /* line 18, ../sass/_main.scss */
 div.main_content div.post_div .post_title {

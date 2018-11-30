@@ -48,10 +48,19 @@
 </style>
 
 <div class="container main_content">
-
+   <div class="adi_content">
+     <div class="adi_copy">
+        <h1 class="adi_heading" style="color:#6393D2;">E-College Books</h1>
+        <p class="adi_text" style="color:#511691;">The go to marketplace for all things textbook related.</p>
+        <div>
+           <a class="adi_signup" href="#">Sign Up</a>
+        </div>
+     </div>
+     <img class="adi_image" src="images/home.jpg" width="300" height="300" alt="image not found"></img>
+  </div>
 
    <div class="topnav quarter">
-      <input type="text" placeholder="Search for books">
+      <input type="text" placeholder="Search for books" style="margin:10px;">
    </div>
   <div id="vue-div" class="container display:none">
 
@@ -62,16 +71,6 @@
 
   <!-- We display the posts. -->
   <div class="half post_list">
-    <div class="adi_content">
-      <div class="adi_copy">
-         <h1 class="adi_heading" style="color:#6393D2;">E-College Books</h1>
-         <p class="adi_text" style="color:#511691;">The go to marketplace for all things textbook related.</p>
-         <div>
-            <a class="adi_signup" href="#">Sign Up</a>
-         </div>
-      </div>
-      <img class="adi_image" src="/applications/hw4/static/images/home.jpg" width="15" height="30"></img>
-   </div>
     <div class="post_div" v-for="post in post_list">
       <div class="post_title">${post.post_title}</div>
       <div class="post_content" v-if="post.editing === false">
