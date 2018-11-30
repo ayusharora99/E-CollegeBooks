@@ -1,8 +1,78 @@
-a {color:#26a69a}
-a:not(.btn):not(.noeffect):hover {color:#26a69a}
-a:not(.btn):not(.noeffect):after {background-color:#26a69a}
-.btn, button, [type=button], [type=submit] {background-color:#26a69a; color:white}
-.progress .determinate {background-color:#26a69a}
-.progress .indeterminate {background-color:#26a69a}
-.tags > span {background-color: #26a69a}
-.tags.dismissible > span.off:hover {background-color:#26a69a}
+a {color:#111111}
+a:not(.btn):not(.noeffect):hover {color:#ea4c89}
+a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
+.btn, button, [type=button], [type=submit] {
+   background-color:#ea4c89;
+   color:white,
+   display:inline-block;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   font-size: 13px;
+   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight:500;
+   line-height:17px;
+   letter-spacing:.02em;
+   vertical-align:middle;
+   border:none;
+   border-radius:4px;
+   position:relative;
+}
+.progress .determinate {background-color:#ea4c89}
+.progress .indeterminate {background-color:#ea4c89}
+.tags > span {background-color: #ea4c89}
+.tags.dismissible > span.off:hover {background-color:#ea4c89}
+
+.adi_content {
+   text-align: left;
+   margin: auto;
+   position: relative;
+   max-width: 70em;
+   padding: 2vh 2rem;
+   flex-basis: 100%;
+   width: 100%;
+   z-index: 2;
+   order: 0;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   box-sizing: border-box;
+}
+
+.adi_copy {
+   flex-basis: 50%;
+   width: 50%;
+}
+
+.adi_text {
+   font-size: 1.25rem;
+   display: block;
+   margin-block-start: 1em;
+   margin-block-end: 1em;
+   margin-inline-start: 0px;
+   margin-inline-end: 0px;
+}
+
+.adi_signup {
+   background-color:#ea4c89;
+   text-color: white;
+   display:inline-block;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   font-size: 13px;
+   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight:500;
+   line-height:17px;
+   letter-spacing:.02em;
+   vertical-align:middle;
+   border:none;
+   border-radius:4px;
+   position:relative;
+}
+
+.adi_image {
+   opacity: 1;
+}

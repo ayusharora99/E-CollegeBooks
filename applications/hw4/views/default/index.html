@@ -48,8 +48,26 @@
 </style>
 
 <div class="container main_content">
+   <div class="adi_content">
+      <div class="adi_copy">
+         <h1 class="adi_heading" style="color:#6393D2;">E-College Books</h1>
+         <p class="adi_text" style="color:#511691;">The go to marketplace for all things textbook related.</p>
+         <div>
+            <a class="adi_signup" href="#">Sign Up</a>
+         </div>
+      </div>
+      <img class="adi_image" src="home.jpg" width="400" height="300"></img>
+   </div>
 
+
+
+
+   <div class="topnav quarter">
+      <input type="text" placeholder="Search for books">
+   </div>
   <div id="vue-div" class="container display:none">
+
+
     <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
     <!-- Message in case there are no posts. -->
   <div v-if="post_list.length === 0">There are no posts.</div>
@@ -83,34 +101,34 @@
     <!-- First, let's add a form to insert blog posts. -->
     <div id="add_post" style="display:none" class="half">
       <div class="container form_row">
-        <div class="label quarter">
+        <div class="label">
           Title:
         </div>
-        <div class="form threequarters">
+        <div class="form half">
           <input v-model="form_title" placeholder="Enter the book's title"/>
         </div>
       </div>
       <div class="container form_row">
-        <div class="label quarter">
+        <div class="label">
           Price:
         </div>
-        <div class="form threequarters">
+        <div class="form half">
           <textarea v-model="form_price" placeholder="Enter the price of your book"></textarea>
         </div>
       </div>
       <div class="container form_row">
-        <div class="label quarter">
+        <div class="label">
           Condition:
         </div>
-        <div class="form threequarters">
-          <textarea v-model="form_condition" placeholder="Enter the condition of your post"></textarea>
+        <div class="form half">
+          <textarea v-model="form_condition" placeholder="Enter the condition of your book"></textarea>
         </div>
       </div>
       <div class="container form_row">
-        <div class="label quarter">
+        <div class="label">
           Category:
         </div>
-        <div class="form threequarters">
+        <div class="form half">
           <select v-model="form_category">
             <option disabled value="">Please select one</option>
             <option>Biology</option>
@@ -125,19 +143,13 @@
         </div>
       </div>
       <div class="container form_row"><div class="quarter"></div>
-      <div class="threequarters">
         <div class="submit">
           <button id="add-post" v-on:click="add_post">Submit</button>
-        </div>
       </div>
     </div>
   </div>
 
-
 </div>
-
-</div>
-
 
 
 <script src="{{=URL('static', 'js/default_index.js')}}"></script>
