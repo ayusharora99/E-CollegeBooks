@@ -31,6 +31,7 @@ def edit_comment():
 def get_post_list():
     results = []
     user = None;
+    sort_by = request.vars.sortBy
     if auth.user is None:
         user = None;
         print user
@@ -71,7 +72,7 @@ def get_post_list():
             ))
     # For homogeneity, we always return a dictionary.
     print "sup"
-    newlist = sorted(results, key=lambda k: k['post_title'])
+    newlist = sorted(results, key=lambda k: k[sort_by])
     return response.json(dict(post_list=newlist, user_email=user))
 
 def get_comments():
