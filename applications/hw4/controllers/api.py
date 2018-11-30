@@ -71,7 +71,8 @@ def get_post_list():
             ))
     # For homogeneity, we always return a dictionary.
     print "sup"
-    return response.json(dict(post_list=results, user_email=user))
+    newlist = sorted(results, key=lambda k: k['post_title'])
+    return response.json(dict(post_list=newlist, user_email=user))
 
 def get_comments():
     comments = db(db.comments.post_id == request.vars.id).select()
