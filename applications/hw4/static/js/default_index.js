@@ -56,12 +56,25 @@ var app = function() {
         // If you put code here, it is run BEFORE the call comes back.
     };
 
-    self.get_posts = function() {
-        $.getJSON(get_post_list_url,
+    self.get_posts = function(sortBy) {
+        sortingDict = {
+          Alphabetical: "post_title",
+          Price: "post_price",
+          Category: "post_category"
+
+        }
+        if (!sortBy) {
+          sortBy = "post_title"
+        } else {
+          sortBy = sortingDict[sortBy]
+        }
+        console.log(sortBy)
+        $.post(get_post_list_url, {sortBy: sortBy},
             function(data) {
                 // I am assuming here that the server gives me a nice list
                 // of posts, all ready for display.
                 self.vue.post_list = data.post_list;
+                console.log(self.vue.post_list);
                 self.vue.user = data.user;
                 // Post-processing.
                 self.process_posts();
@@ -76,6 +89,10 @@ var app = function() {
         // or after we have gotten new posts.
         // We add the _idx attribute to the posts.
         enumerate(self.vue.post_list);
+        self.vue.post_list = self.vue.post_list.sort(function(a, b) {
+            return a.post_category - b.post_category;
+          })
+        console.log(self.vue.post_list.sort());
         // We initialize the smile status to match the like.
         self.vue.post_list.map(function (e) {
             // I need to use Vue.set here, because I am adding a new watched attribute
@@ -99,6 +116,7 @@ var app = function() {
         p.editing = true;
         editing = p.editing;
     }
+
 
     self.editComment = function(post_idx, comment_body, reply_author, id) {
         var p = self.vue.post_list[post_idx];
@@ -186,6 +204,7 @@ var app = function() {
             form_price: "",
             form_condition: "",
             form_category: "",
+            form_sort: "",
             post_list: [],
             title_save_pending: false,
             user: null
@@ -199,7 +218,9 @@ var app = function() {
             toggleAddingComment: self.toggleAddingComment,
             saveComment: self.saveComment,
             editComment: self.editComment,
-            submitCommentEdit: self.submitCommentEdit
+            submitCommentEdit: self.submitCommentEdit,
+            sortPosts: self.sortPosts,
+            get_posts: self.get_posts
         }
     });
 
@@ -209,7 +230,7 @@ var app = function() {
     }
 
     // Gets the posts.
-    self.get_posts();
+    self.get_posts("Alphabetical");
 
     return self;
 };

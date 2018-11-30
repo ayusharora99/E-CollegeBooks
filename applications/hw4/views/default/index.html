@@ -7,6 +7,7 @@
   var edit_post_url = "{{=URL('api', 'edit_post', user_signature=True)}}";
   var edit_comment_url = "{{=URL('api', 'edit_comment', user_signature=True)}}";
   var get_post_list_url = "{{=URL('api', 'get_post_list')}}";
+  var sort_posts_url = "{{=URL('api', 'sort_posts')}}";
   // Like callbacks.
   var set_like_url = "{{=URL('api', 'set_like', user_signature=True)}}";
   var get_likers_url = "{{=URL('api', 'get_likers')}}"
@@ -69,6 +70,15 @@
          <div>
             <a class="adi_signup" href="#">Sign Up</a>
          </div>
+         <div class="form half">
+           <select v-model="form_sort">
+             <option disabled value="">Sort By</option>
+             <option>Alphabetical</option>
+             <option>Category</option>
+             <option>Price</option>
+           </select>
+         </div>
+         <button v-on:click="get_posts(form_sort)">submit!</button>
       </div>
       <img class="adi_image" src="/applications/hw4/static/images/home.jpg" width="15" height="30"></img>
    </div>
