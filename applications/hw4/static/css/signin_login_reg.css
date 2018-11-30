@@ -8,8 +8,10 @@ main.white {
 div.main_content_slr {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
+    width: 60%;
+    padding: 30px;
     transform: translate(-50%, -50%);
     border: 3px solid #511691;
 }
