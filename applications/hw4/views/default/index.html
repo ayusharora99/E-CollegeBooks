@@ -47,13 +47,41 @@
   }
 </style>
 
-<div class="main_content">
+<div class="container main_content">
 
-  <div id="vue-div" class="display:none">
+  <div id="vue-div" class="container display:none">
     <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
+    <!-- Message in case there are no posts. -->
+  <div v-if="post_list.length === 0">There are no posts.</div>
+
+  <!-- We display the posts. -->
+  <div class="half post_list">
+    <div class="post_div" v-for="post in post_list">
+      <div class="post_title">${post.post_title}</div>
+      <div class="post_content" v-if="post.editing === false">
+        Price: ${post.post_price}
+        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
+        <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
+      </div>
+      <div class="post_content" v-if="post.editing === false">
+        Condition: ${post.post_condition}
+        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
+        <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
+      </div>
+      <div class="post_content" v-if="post.editing === false">
+        Category: ${post.post_category}
+        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
+        <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
+      </div>
+      <div v-if="post.editing === true">
+        <textarea v-model="post.post_content" id="edittext"></textarea>
+        <button v-on:click="submitEditPost(post._idx)">submit!</button>
+      </div>
+    </div>
+  </div>
 
     <!-- First, let's add a form to insert blog posts. -->
-    <div id="add_post" style="display:none">
+    <div id="add_post" style="display:none" class="half">
       <div class="container form_row">
         <div class="label quarter">
           Title:
@@ -105,34 +133,6 @@
     </div>
   </div>
 
-  <!-- Message in case there are no posts. -->
-  <div v-if="post_list.length === 0">There are no posts.</div>
-
-  <!-- We display the posts. -->
-  <div id="post_list">
-    <div class="post_div" v-for="post in post_list">
-      <div class="post_title">${post.post_title}</div>
-      <div class="post_content" v-if="post.editing === false">
-        Price: ${post.post_price}
-        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
-        <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
-      </div>
-      <div class="post_content" v-if="post.editing === false">
-        Condition: ${post.post_condition}
-        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
-        <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
-      </div>
-      <div class="post_content" v-if="post.editing === false">
-        Category: ${post.post_category}
-        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
-        <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
-      </div>
-      <div v-if="post.editing === true">
-        <textarea v-model="post.post_content" id="edittext"></textarea>
-        <button v-on:click="submitEditPost(post._idx)">submit!</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
