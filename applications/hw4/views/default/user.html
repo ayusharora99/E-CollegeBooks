@@ -1,6 +1,6 @@
 {{extend 'layout.html'}}
-<div class="main_content">
-    <h2>
+<div class="main_content_slr">
+    <h2 class="titles">
     {{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}
     </h2>
 

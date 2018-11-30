@@ -1,17 +1,23 @@
+/*
 main.white {
     height: 200px;
     position: relative;
     border: 3px solid #511691
 }
-
-div.main_content {
+*/
+div.main_content_slr {
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 3px solid #511691;
+}
+
+h2.titles {
+    color: #5b96e9;
 }
 
 div.row {
-    text-color: #5b96e9;
+    color: #5b96e9;
 }
