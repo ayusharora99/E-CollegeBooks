@@ -5,8 +5,12 @@ import time
 def add_post():
     post_id = db.post.insert(
         post_title=request.vars.post_title,
-        post_content=request.vars.post_content,
+        post_price=request.vars.post_price,
+        post_condition=request.vars.post_condition,
+        post_category=request.vars.post_category
     )
+    print request.vars.post_price;
+    print request.vars.post_title;
     # We return the id of the new post, so we can insert it along all the others.
     return response.json(dict(post_id=post_id))
 
@@ -39,6 +43,9 @@ def get_post_list():
                 post_title=row.post_title,
                 post_content=row.post_content,
                 post_author=row.post_author,
+                post_price = row.post_price,
+                post_condition = row.post_condition,
+                post_category = row.post_category,
                 thumb = None,
             ))
     else:
@@ -57,11 +64,14 @@ def get_post_list():
                 post_title=row.post.post_title,
                 post_content=row.post.post_content,
                 post_author=row.post.post_author,
+                post_price = row.post.post_price,
+                post_condition = row.post.post_condition,
+                post_category = row.post.post_category,
                 thumb = None if row.thumb.id is None else row.thumb.thumb_state,
             ))
     # For homogeneity, we always return a dictionary.
     print "sup"
-    return response.json(dict(post_list=post_list, user_email=user))
+    return response.json(dict(post_list=results, user_email=user))
 
 def get_comments():
     comments = db(db.comments.post_id == request.vars.id).select()

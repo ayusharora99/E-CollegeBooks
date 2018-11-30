@@ -25,7 +25,10 @@ def get_current_time():
 db.define_table('post',
                 Field('post_author', default=get_user_email()),
                 Field('post_title'),
-                Field('post_content', 'text'),
+                Field('post_content'),
+                Field('post_price', 'text'),
+                Field('post_condition', 'text'),
+                Field('post_category', 'text'),
                 Field('post_time', 'datetime', default=get_current_time()),
                 Field('post_id'),
                 )

@@ -19,12 +19,17 @@ var app = function() {
         // We disable the button, to prevent double submission.
         $.web2py.disableElement($("#add-post"));
         var sent_title = self.vue.form_title; // Makes a copy
-        var sent_content = self.vue.form_content; //
+        var price = self.vue.form_price;
+        console.log(price);
+        var condition = self.vue.form_condition;
+        var category = self.vue.form_category;
         $.post(add_post_url,
             // Data we are sending.
             {
                 post_title: self.vue.form_title,
-                post_content: self.vue.form_content
+                post_price: self.vue.form_price,
+                post_condition: self.vue.form_condition,
+                post_category: self.vue.form_category
             },
             // What do we do when the post succeeds?
             function (data) {
@@ -33,11 +38,16 @@ var app = function() {
                 // Clears the form.
                 self.vue.form_title = "";
                 self.vue.form_content = "";
+                self.vue.form_price = "";
+                self.vue.form_condition = "",
+                self.vue.form_category = ""
                 // Adds the post to the list of posts.
                 var new_post = {
                     id: data.post_id,
                     post_title: sent_title,
-                    post_content: sent_content
+                    post_price: price,
+                    post_condition: condition,
+                    post_category: category
                 };
                 self.vue.post_list.unshift(new_post);
                 // We re-enumerate the array.
@@ -173,6 +183,9 @@ var app = function() {
         data: {
             form_title: "",
             form_content: "",
+            form_price: "",
+            form_condition: "",
+            form_category: "",
             post_list: [],
             title_save_pending: false,
             user: null
