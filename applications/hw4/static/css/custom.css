@@ -3,7 +3,7 @@ a:not(.btn):not(.noeffect):hover {color:#ea4c89}
 a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
 .btn, button, [type=button], [type=submit] {
    background-color:#ea4c89;
-   color:white,
+   color:white;
    display:inline-block;
    padding-left: 20px;
    padding-right: 20px;
