@@ -27,15 +27,14 @@ a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
 .adi_content {
    text-align: left;
    margin: auto;
-   position: relative;
-   max-width: 70em;
+   position: center;
+   max-width: 70%;
    padding: 2vh 2rem;
    flex-basis: 100%;
    width: 100%;
    z-index: 2;
    order: 0;
    display: flex;
-   align-items: center;
    justify-content: flex-start;
    box-sizing: border-box;
    background-color: white;
@@ -77,4 +76,5 @@ a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
 
 .adi_image {
    /* opacity: 1; */
+   float:right;
 }
