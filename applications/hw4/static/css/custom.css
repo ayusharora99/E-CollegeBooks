@@ -38,6 +38,8 @@ a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
    align-items: center;
    justify-content: flex-start;
    box-sizing: border-box;
+   background-color: white;
+   border: 1px black solid;
 }
 
 .adi_copy {
@@ -56,7 +58,7 @@ a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
 
 .adi_signup {
    background-color:#ea4c89;
-   text-color: white;
+   color: white;
    display:inline-block;
    padding-left: 20px;
    padding-right: 20px;

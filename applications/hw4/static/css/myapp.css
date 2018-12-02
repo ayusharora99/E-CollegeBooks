@@ -6,6 +6,7 @@
 /* line 5, ../sass/_main.scss */
 div.main_content {
   padding: 16px;
+  background-color: #5b96e9;
 }
 /* line 8, ../sass/_main.scss */
 div.main_content div.form_row {
@@ -18,9 +19,9 @@ div.main_content div.post_div {
   margin-bottom: 2px;
   margin-right: 35px;
   border: 1px black solid;
-  background-color: #eeeeee;
   padding: 4px;
   border-radius: 6px;
+  background-color: white;
   padding: 10px;
 }
 /* line 18, ../sass/_main.scss */
@@ -34,4 +35,14 @@ div.main_content i.changed {
 /* line 25, ../sass/_main.scss */
 div.main_content span.likers_list {
   color: #7777cc;
+}
+
+/*---------------------*/
+
+div.search_bars {
+  background-color: white;
+  padding:5px;
+  margin:8px;
+  border: 1px black solid;
+  width: 40%;
 }
