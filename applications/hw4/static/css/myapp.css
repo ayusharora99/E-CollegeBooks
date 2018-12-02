@@ -18,7 +18,7 @@ div.main_content div.post_div {
   margin-top: 5px;
   margin-bottom: 2px;
   margin-right: 35px;
-  border: 1px black solid;
+  border: 2px black solid;
   padding: 4px;
   background-color: white;
   padding: 10px;
@@ -42,18 +42,24 @@ div.search_bars {
   background-color: white;
   padding:5px;
   margin:8px;
-  border: 1px black solid;
+  border: 2px black solid;
   width: 40%;
 }
 
 div.add_post {
   background-color: white;
   margin: 5px;
-  border: 1px black solid;
+  border: 2px black solid;
   width: 40%;
 }
 
 div.form_row {
   padding: 5px;
   margin: 8px;
+  text-decoration: underline;
+}
+
+div.new_post_fields {
+  border: 1px black solid;
+  width: 99%;
 }
