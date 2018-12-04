@@ -51,28 +51,28 @@
 <div class="container main_content">
    <div class="adi_content">
      <div class="adi_copy">
-        <h1 class="adi_heading" style="color:#6393D2;">E-College Books</h1>
+        <h1 class="adi_heading" style="color:#6393D2; text-decoration:underline; text-shadow: 2px 2px  black; font-style: italic;">E-College Books</h1>
         <p class="adi_text" style="color:#511691;">The go to marketplace for all things textbook related.</p>
         <div>
            <a class="adi_signup" href="#">Sign Up</a>
         </div>
      </div>
-     <img class="adi_image" src="images/home.jpg" width="300" height="300" alt="image not found"></img>
+     <img class="adi_image" src="http://127.0.0.1:8000/hw4/static/images/home.jpg" width="300" height="300" alt="image not found"></img>
   </div>
 
-   <div class="row">
-   <div class="topnav quarter">
-      <input type="text" placeholder="Search for books" style="margin:10px;">
-   </div>
-   <div class="form quarter" style="margin:10px;">
-     <select v-model="form_sort">
-      <option disabled value="">Sort By</option>
-      <option>Alphabetical</option>
-      <option>Category</option>
-      <option>Price</option>
-     </select>
-   </div>
-   <button v-on:click="get_posts(form_sort)">Sort</button>
+   <div class="search_bars">
+       <div class="topnav">
+          <input type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
+       </div>
+       <div class="form" style="margin:10px; width:95%; border: 1px black solid;">
+         <select v-model="form_sort">
+          <option disabled value="">Sort By</option>
+          <option>Alphabetical</option>
+          <option>Category</option>
+          <option>Price</option>
+         </select>
+       </div>
+       <button v-on:click="get_posts(form_sort)">Sort</button>
 
 
 
@@ -111,12 +111,12 @@
   </div>
 
     <!-- First, let's add a form to insert blog posts. -->
-    <div id="add_post" style="display:none" class="half">
+    <div id="add_post" style="display:none" class="half add_post">
       <div class="container form_row">
         <div class="label">
           Title:
         </div>
-        <div class="form half">
+        <div class="form new_post_fields">
           <input v-model="form_title" placeholder="Enter the book's title"/>
         </div>
       </div>
@@ -124,7 +124,7 @@
         <div class="label">
           Price:
         </div>
-        <div class="form half">
+        <div class="form new_post_fields">
           <textarea v-model="form_price" placeholder="Enter the price of your book"></textarea>
         </div>
       </div>
@@ -132,7 +132,7 @@
         <div class="label">
           Condition:
         </div>
-        <div class="form half">
+        <div class="form new_post_fields">
           <textarea v-model="form_condition" placeholder="Enter the condition of your book"></textarea>
         </div>
       </div>
@@ -140,7 +140,7 @@
         <div class="label">
           Category:
         </div>
-        <div class="form half">
+        <div class="form new_post_fields">
           <select v-model="form_category">
             <option disabled value="">Please select one</option>
             <option>Biology</option>
