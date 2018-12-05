@@ -1,0 +1,39 @@
+h1.book_header {
+    color:#6393D2; 
+    text-decoration:underline; 
+    text-shadow: 2px 2px  black; 
+    text-align: center;
+    margin: auto;
+    position: center;
+    max-width: 70%;
+    padding: 2vh 2rem;
+    flex-basis: 100%;
+    width: 100%;
+    z-index: 2;
+    order: 0;
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 25px;
+}
+
+div.book_img_space{
+    background-color: white;
+    border: 2px black solid;
+    margin:15px;
+    padding: 8px;
+    border-radius: 25px;
+    align-content: center;
+
+}
+
+img.book_img {
+    max-width: 90%;
+    height: auto;
+}
+
+div.book_info {
+    margin:15px;
+    padding: 8px;
+    border-radius: 25px;
+}

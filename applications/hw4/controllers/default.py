@@ -13,6 +13,8 @@ def index():
     # We just want to expand the template.
     return dict()
 
+def book():
+    return dict()
 
 def user():
     """

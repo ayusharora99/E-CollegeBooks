@@ -18,7 +18,7 @@
   var saveCommentUrl = "{{=URL('api', 'set_comments')}}";
   var user_email = 'false'
 
-  var is_logged_in = {{='false' if auth.user is None else 'true'}};
+  var is_logged_in = "{{='false' if auth.user is None else 'true'}}";
 
 
   var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";
@@ -26,7 +26,31 @@
 </script>
 {{end}}
 
-<div>
+<div class="container main_content">
+    <h1 class="book_header">E-College Books</h1>
+    <div class="container book_img_info">
+      
+      <div class="third book_img_space">
+          <img class="book_img" src="http://127.0.0.1:8000/hw4/static/images/home.jpg" alt="image not found"></img>
+      </div>
+    
+      <div class="half book_info">
+          <div class="post_div" v-for="post in post_list">
+              <div class="post_title">
+                Title: <!--${post.post_title}-->
+              </div>
+              <div class="post_content">
+                Price: <!--${post.post_price}-->
+              </div>
+              <div class="post_content">
+                Condition: <!--${post.post_condition}-->
+              </div>
+              <div class="post_content">
+                Category: <!--${post.post_category}-->
+              </div>
+            </div>
+      </div>
+    </div>
 
 
 </div>

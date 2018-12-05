@@ -73,9 +73,7 @@
          </select>
        </div>
        <button v-on:click="get_posts(form_sort)">Sort</button>
-
-
-
+      
    </div>
   <div id="vue-div" class="container display:none">
 
@@ -107,6 +105,8 @@
         <textarea v-model="post.post_content" id="edittext"></textarea>
         <button v-on:click="submitEditPost(post._idx)">submit!</button>
       </div>
+      <!-- Button to view post for more info -->
+      <button onclick="location.href='http://127.0.0.1:8000/hw4/default/book'">View Book!</button>
     </div>
   </div>
 

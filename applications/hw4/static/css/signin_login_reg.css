@@ -1,6 +1,8 @@
 
 main.white {
     background-color: #5b96e9;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 
 div.main_content_slr {
