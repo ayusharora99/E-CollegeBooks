@@ -52,7 +52,6 @@ def get_post_list():
     else:
         user = auth.user.email;
         print user
-        print 'hello'
         # Logged in.
         rows = db().select(db.post.ALL, db.thumb.ALL,
                             left=[
@@ -71,7 +70,6 @@ def get_post_list():
                 thumb = None if row.thumb.id is None else row.thumb.thumb_state,
             ))
     # For homogeneity, we always return a dictionary.
-    print "sup"
     newlist = sorted(results, key=lambda k: k[sort_by])
     return response.json(dict(post_list=newlist, user_email=user))
 

@@ -63,6 +63,7 @@ var app = function() {
           Category: "post_category"
 
         }
+        console.log(sortBy)
         if (!sortBy) {
           sortBy = "post_title"
         } else {
@@ -92,7 +93,6 @@ var app = function() {
         self.vue.post_list = self.vue.post_list.sort(function(a, b) {
             return a.post_category - b.post_category;
           })
-        console.log(self.vue.post_list.sort());
         // We initialize the smile status to match the like.
         self.vue.post_list.map(function (e) {
             // I need to use Vue.set here, because I am adding a new watched attribute

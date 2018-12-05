@@ -65,17 +65,17 @@
           <input type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
        </div>
        <div class="form" style="margin:10px; width:95%; border: 1px black solid;">
-         <select v-model="form_sort">
-          <option disabled value="">Sort By</option>
-          <option>Alphabetical</option>
-          <option>Category</option>
-          <option>Price</option>
-         </select>
+
        </div>
-       <button v-on:click="get_posts(form_sort)">Sort</button>
-      
    </div>
   <div id="vue-div" class="container display:none">
+    <select v-model="form_sort">
+     <option disabled value="">Sort By</option>
+     <option>Alphabetical</option>
+     <option>Category</option>
+     <option>Price</option>
+    </select>
+  <button v-on:click="get_posts(form_sort)">Sort</button>
 
 
     <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
@@ -156,9 +156,10 @@
           </select>
         </div>
       </div>
+
       <div class="container form_row"><div class="quarter"></div>
         <div class="submit">
-          <button id="add-post" v-on:click="add_post">Submit</button>
+          <button id="add-post" v-on:click="get_posts(form_sort)">Submit</button>
       </div>
     </div>
   </div>
