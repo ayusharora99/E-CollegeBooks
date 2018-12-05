@@ -1,3 +1,4 @@
+/* HEADER */
 h1.book_header {
     color:#6393D2; 
     text-decoration:underline; 
@@ -17,6 +18,8 @@ h1.book_header {
     border-radius: 25px;
 }
 
+
+/* Book image and information area */
 div.book_img_space{
     background-color: white;
     border: 2px black solid;
@@ -34,7 +37,14 @@ img.book_img {
 }
 
 div.book_info {
-    margin:15px;
+    padding: 8px;
+    border-radius: 25px;
+}
+
+/* Messaging Area */
+div.message_block{
+    background-color: white;
+    border: 2px black solid;
     padding: 8px;
     border-radius: 25px;
 }
