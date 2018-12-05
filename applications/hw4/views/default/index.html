@@ -18,7 +18,7 @@
   var saveCommentUrl = "{{=URL('api', 'set_comments')}}";
   var user_email = 'false'
 
-  var is_logged_in = {{='false' if auth.user is None else 'true'}};
+  var is_logged_in = "{{='false' if auth.user is None else 'true'}}";
 
 
   var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";

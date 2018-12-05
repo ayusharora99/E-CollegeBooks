@@ -1,10 +1,8 @@
-/*
+
 main.white {
-    height: 200px;
-    position: relative;
-    border: 3px solid #511691
+    background-color: #5b96e9;
 }
-*/
+
 div.main_content_slr {
     margin: 0;
     position: absolute;
@@ -13,7 +11,9 @@ div.main_content_slr {
     width: 60%;
     padding: 30px;
     transform: translate(-50%, -50%);
-    border: 3px solid #511691;
+    border: 3px solid black;
+    border-radius: 25px;
+    background-color: white;
 }
 
 h2.titles {

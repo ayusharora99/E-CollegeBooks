@@ -22,6 +22,7 @@ div.main_content div.post_div {
   padding: 4px;
   background-color: white;
   padding: 10px;
+  border-radius: 25px;
 }
 /* line 18, ../sass/_main.scss */
 div.main_content div.post_div .post_title {
@@ -44,6 +45,7 @@ div.search_bars {
   margin:8px;
   border: 2px black solid;
   width: 40%;
+  border-radius: 25px;
 }
 
 div.add_post {
@@ -51,15 +53,18 @@ div.add_post {
   margin: 5px;
   border: 2px black solid;
   width: 40%;
+  border-radius: 25px;
 }
 
 div.form_row {
   padding: 5px;
   margin: 8px;
   text-decoration: underline;
+  border-radius: 25px;
 }
 
 div.new_post_fields {
   border: 1px black solid;
   width: 99%;
+  
 }

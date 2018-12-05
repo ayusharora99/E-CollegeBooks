@@ -39,6 +39,7 @@ a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
    box-sizing: border-box;
    background-color: white;
    border: 2px black solid;
+   border-radius: 25px;
 }
 
 .adi_copy {
