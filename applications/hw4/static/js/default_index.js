@@ -43,7 +43,7 @@ var app = function() {
                 self.vue.form_price = "";
                 self.vue.form_condition = "",
                 self.vue.form_category = "",
-                self.vue.form_edition = ""
+                self.vue.form_edition = "";
                 // Adds the post to the list of posts.
                 var new_post = {
                     id: data.post_id,

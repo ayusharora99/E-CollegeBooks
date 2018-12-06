@@ -7,7 +7,9 @@ def add_post():
         post_title=request.vars.post_title,
         post_price=request.vars.post_price,
         post_condition=request.vars.post_condition,
-        post_category=request.vars.post_category
+        post_category=request.vars.post_category,
+        post_edition=request.vars.post_edition
+
     )
     print request.vars.post_price;
     print request.vars.post_title;
@@ -47,7 +49,7 @@ def get_post_list():
                 post_price = row.post_price,
                 post_condition = row.post_condition,
                 post_category = row.post_category,
-                post_edition = row.post_category,
+                post_edition = row.post_edition,
                 thumb = None,
             ))
     else:
