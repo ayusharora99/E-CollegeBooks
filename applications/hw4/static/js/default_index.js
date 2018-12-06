@@ -115,6 +115,12 @@ var app = function() {
         });
     };
 
+    self.delete_post = function(post_idx) {
+        console.log(self.vue.post_list[post_idx].id);
+        $.post(delete_post_url,{
+            post_id: self.vue.post_list[post_idx].id});
+    };
+
     self.editPost = function(post_idx) {
         var p = self.vue.post_list[post_idx];
         p.editing = true;
@@ -197,6 +203,8 @@ var app = function() {
         });
     }
 
+    
+
     // Complete as needed.
     self.vue = new Vue({
         el: "#vue-div",
@@ -225,7 +233,8 @@ var app = function() {
             editComment: self.editComment,
             submitCommentEdit: self.submitCommentEdit,
             sortPosts: self.sortPosts,
-            get_posts: self.get_posts
+            get_posts: self.get_posts,
+            delete_post: self.delete_post,
         }
     });
 

@@ -24,6 +24,11 @@ def edit_post():
  )
 
 @auth.requires_signature()
+def delete_post():
+ db(db.post.id == request.vars.post_id).delete()
+
+
+@auth.requires_signature()
 def edit_comment():
     db(db.comments.id == request.vars.id).update(
         body = request.vars.body,
@@ -94,3 +99,5 @@ def get_logged_in_user():
    user = None if auth.user == None else auth.user.email
    print auth;
    return response.json(dict(user = user))
+
+   
