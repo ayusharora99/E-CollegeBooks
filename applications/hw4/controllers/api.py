@@ -47,6 +47,7 @@ def get_post_list():
                 post_price = row.post_price,
                 post_condition = row.post_condition,
                 post_category = row.post_category,
+                post_edition = row.post_category,
                 thumb = None,
             ))
     else:
@@ -67,6 +68,7 @@ def get_post_list():
                 post_price = row.post.post_price,
                 post_condition = row.post.post_condition,
                 post_category = row.post.post_category,
+                post_edition = row.post.post_edition,
                 thumb = None if row.thumb.id is None else row.thumb.thumb_state,
             ))
     # For homogeneity, we always return a dictionary.

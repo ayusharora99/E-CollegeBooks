@@ -93,6 +93,11 @@
     <div class="post_div" v-for="post in post_list">
       <div class="post_title" style="font-weight:bold;">${post.post_title}</div>
       <div class="post_content" v-if="post.editing === false">
+        Edition: ${post.post_edition}
+        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
+        <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
+      </div>
+      <div class="post_content" v-if="post.editing === false">
         Price: $${post.post_price}
         <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
@@ -126,6 +131,14 @@
             </div>
             <div class="form new_post_fields">
               <input v-model="form_title" placeholder="Enter the book's title"/>
+            </div>
+          </div>
+          <div class="container form_row">
+            <div class="label">
+              Edition:
+            </div>
+            <div class="form new_post_fields">
+              <input v-model="form_edition" placeholder="Enter the book's edition"/>
             </div>
           </div>
           <div class="container form_row">

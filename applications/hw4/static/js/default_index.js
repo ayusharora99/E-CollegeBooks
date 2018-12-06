@@ -23,13 +23,15 @@ var app = function() {
         console.log(price);
         var condition = self.vue.form_condition;
         var category = self.vue.form_category;
+        var edition = self.vue.form_edition;
         $.post(add_post_url,
             // Data we are sending.
             {
                 post_title: self.vue.form_title,
                 post_price: self.vue.form_price,
                 post_condition: self.vue.form_condition,
-                post_category: self.vue.form_category
+                post_category: self.vue.form_category,
+                post_edition: self.vue.form_edition
             },
             // What do we do when the post succeeds?
             function (data) {
@@ -40,14 +42,16 @@ var app = function() {
                 self.vue.form_content = "";
                 self.vue.form_price = "";
                 self.vue.form_condition = "",
-                self.vue.form_category = ""
+                self.vue.form_category = "",
+                self.vue.form_edition = ""
                 // Adds the post to the list of posts.
                 var new_post = {
                     id: data.post_id,
                     post_title: sent_title,
                     post_price: price,
                     post_condition: condition,
-                    post_category: category
+                    post_category: category,
+                    post_edition: edition,
                 };
                 self.vue.post_list.unshift(new_post);
                 // We re-enumerate the array.
@@ -204,6 +208,7 @@ var app = function() {
             form_price: "",
             form_condition: "",
             form_category: "",
+            form_edition:"",
             form_sort: "",
             post_list: [],
             title_save_pending: false,
