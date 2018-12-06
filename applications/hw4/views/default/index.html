@@ -91,9 +91,9 @@
   <!-- We display the posts. -->
   <div class="half post_list">
     <div class="post_div" v-for="post in post_list">
-      <div class="post_title">${post.post_title}</div>
+      <div class="post_title" style="font-weight:bold;">${post.post_title}</div>
       <div class="post_content" v-if="post.editing === false">
-        Price: ${post.post_price}
+        Price: $${post.post_price}
         <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> -->
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
       </div>

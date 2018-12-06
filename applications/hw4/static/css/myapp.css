@@ -73,6 +73,7 @@ div.add_post_title {
   text-decoration: underline;
   font-weight: bold;
   font-size: 20px;
+  padding:15px;
 }
 
 div.add_post {
