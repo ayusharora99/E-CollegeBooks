@@ -119,6 +119,8 @@ var app = function() {
         console.log(self.vue.post_list[post_idx].id);
         $.post(delete_post_url,{
             post_id: self.vue.post_list[post_idx].id});
+        //Cheap window reload for now to get rid of post    
+        location.reload();
     };
 
     self.editPost = function(post_idx) {
