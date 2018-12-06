@@ -39,6 +39,8 @@ div.main_content span.likers_list {
 
 /*---------------------*/
 
+
+/* Search and Sorting */
 div.search_bars {
   background-color: white;
   padding:5px;
@@ -62,6 +64,8 @@ span.sorting_title{
   text-decoration:underline;
 }
 
+
+/* Add Post Section */
 div.add_post {
   background-color: white;
   margin: 5px;
