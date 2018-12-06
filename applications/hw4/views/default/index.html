@@ -64,24 +64,25 @@
   
   <div id="vue-div" class="container display:none">
     <!--Search button functionality needs to be added here-->
-    <div class="search_bars">
-      <div class="topnav">
-         <span class="sorting_title">Please Enter A Key Word Into The Search Bar</span>
-         <input type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
-         <button style="margin:10px;">Search</button>
-      </div>
+    <div class="container">
+        <div class="half search_bars">
+          <div class="topnav" style="padding:15px;">
+            <span class="sorting_title">Please Enter A Key Word Into The Search Bar</span>
+            <input type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
+            <button style="margin:10px;">Search</button>
+          </div>
+        </div>
+        <div class="half sorting" style="padding:15px;">
+            <span class="sorting_title">Select A Method To Sort By:</span>
+            <select v-model="form_sort" style="border: 1px black solid;">
+            <option disabled value="">Sort By</option>
+            <option>Alphabetical</option>
+            <option>Category</option>
+            <option>Price</option>
+            </select>
+          <button v-on:click="get_posts(form_sort)" style="margin:10px;">Sort</button>
+        </div>  
     </div>
-    <div class="sorting">
-        <span class="sorting_title">Select A Method To Sort By:</span>
-        <select v-model="form_sort" style="border: 1px black solid;">
-        <option disabled value="">Sort By</option>
-        <option>Alphabetical</option>
-        <option>Category</option>
-        <option>Price</option>
-        </select>
-      <button v-on:click="get_posts(form_sort)" style="margin:10px;">Sort</button>
-    </div>  
-
 
     <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
     <!-- Message in case there are no posts. -->
