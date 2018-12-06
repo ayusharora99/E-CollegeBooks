@@ -54,7 +54,7 @@
         <h1 class="adi_heading" style="color:#6393D2; text-decoration:underline; text-shadow: 2px 2px  black; font-style: italic;">E-College Books</h1>
         <p class="adi_text" style="color:#511691;">The go to marketplace for all things textbook related.</p>
         <div>
-           <a class="adi_signup" href="#">Sign Up</a>
+           <button class="adi_signup" onclick="location.href='http://127.0.0.1:8000/hw4/default/user/register?_next=/hw4/default/index'">Sign Up</button>
         </div>
      </div>
      <img class="adi_image" src="http://127.0.0.1:8000/hw4/static/images/home.jpg" width="300" height="300" alt="image not found"></img>
@@ -64,18 +64,18 @@
        <div class="topnav">
           <input type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
        </div>
-       <div class="form" style="margin:10px; width:95%; border: 1px black solid;">
-
-       </div>
    </div>
   <div id="vue-div" class="container display:none">
-    <select v-model="form_sort">
-     <option disabled value="">Sort By</option>
-     <option>Alphabetical</option>
-     <option>Category</option>
-     <option>Price</option>
-    </select>
-  <button v-on:click="get_posts(form_sort)">Sort</button>
+    <div class="sorting">
+        <span class="sorting_title">Select A Method To Sort By:</span>
+        <select v-model="form_sort" style="border: 1px black solid;">
+        <option disabled value="">Sort By</option>
+        <option>Alphabetical</option>
+        <option>Category</option>
+        <option>Price</option>
+        </select>
+      <button v-on:click="get_posts(form_sort)" style="margin:10px;">Sort</button>
+    </div>  
 
 
     <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
