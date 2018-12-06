@@ -32,6 +32,7 @@ db.define_table('post',
                 Field('post_time', 'datetime', default=get_current_time()),
                 Field('post_id'),
                 Field('post_edition'),
+                Field('post_book_author')
                 )
 
 

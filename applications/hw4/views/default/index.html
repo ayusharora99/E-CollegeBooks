@@ -99,28 +99,35 @@
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
         -->
       </div>
+
       <div class="post_content" v-if="post.editing === false">
         Price: $${post.post_price}
         <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> 
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
         -->
       </div>
+      
+      <!--
       <div class="post_content" v-if="post.editing === false">
         Condition: ${post.post_condition}
-        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> 
+        <p v-if="post.post_author === logged_in_user">this is my post</p> 
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
-        -->
+        
       </div>
+      -->
+
       <div class="post_content" v-if="post.editing === false">
         Category: ${post.post_category}
         <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> 
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
         -->
       </div>
+
       <div v-if="post.editing === true">
         <textarea v-model="post.post_content" id="edittext"></textarea>
         <button v-on:click="submitEditPost(post._idx)">submit!</button>
       </div>
+
       <!-- Button to view post for more info -->
       <button onclick="location.href='http://127.0.0.1:8000/hw4/default/book'">View Book!</button>
       <button v-on:click="delete_post(post._idx)">Sold! (Delete)</button>
@@ -151,13 +158,22 @@
 
           <div class="container form_row">
             <div class="label">
+              Author:
+            </div>
+            <div class="form new_post_fields">
+              <input v-model="form_book_author" placeholder="Enter the book's author"/>
+            </div>
+          </div>
+
+          <div class="container form_row">
+            <div class="label">
               Price:
             </div>
             <div class="form new_post_fields">
               <textarea v-model="form_price" placeholder="Enter the price of your book"></textarea>
             </div>
           </div>
-
+          
           <div class="container form_row">
             <div class="label">
               Condition:
