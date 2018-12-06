@@ -24,6 +24,7 @@ var app = function() {
         var condition = self.vue.form_condition;
         var category = self.vue.form_category;
         var edition = self.vue.form_edition;
+        var cover = self.vue.form_cover;
         var book_author = self.vue.form_book_author;
         $.post(add_post_url,
             // Data we are sending.
@@ -33,6 +34,7 @@ var app = function() {
                 post_condition: self.vue.form_condition,
                 post_category: self.vue.form_category,
                 post_edition: self.vue.form_edition,
+                post_cover: self.vue.form_cover,
                 post_book_author: self.vue.form_book_author
             },
             // What do we do when the post succeeds?
@@ -46,6 +48,7 @@ var app = function() {
                 self.vue.form_condition = "",
                 self.vue.form_category = "",
                 self.vue.form_edition = "",
+                self.vue.form_cover = "",
                 self.vue.form_book_author = "";
                 // Adds the post to the list of posts.
                 var new_post = {
@@ -55,6 +58,7 @@ var app = function() {
                     post_condition: condition,
                     post_category: category,
                     post_edition: edition,
+                    post_cover: cover,
                     post_book_author: book_author,
                 };
                 self.vue.post_list.unshift(new_post);
@@ -223,6 +227,7 @@ var app = function() {
             form_condition: "",
             form_category: "",
             form_edition:"",
+            form_cover:"",
             form_book_author:"",
             form_sort: "",
             post_list: [],

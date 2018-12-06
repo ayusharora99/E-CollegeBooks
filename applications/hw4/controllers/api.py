@@ -9,6 +9,7 @@ def add_post():
         post_condition=request.vars.post_condition,
         post_category=request.vars.post_category,
         post_edition=request.vars.post_edition,
+        post_cover=request.vars.post_cover,
         post_book_author=request.vars.post_book_author
 
     )
@@ -56,6 +57,7 @@ def get_post_list():
                 post_condition = row.post_condition,
                 post_category = row.post_category,
                 post_edition = row.post_edition,
+                post_cover = row.post_cover,
                 post_book_author = row.post_book_author,
                 thumb = None,
             ))
@@ -78,6 +80,7 @@ def get_post_list():
                 post_condition = row.post.post_condition,
                 post_category = row.post.post_category,
                 post_edition = row.post.post_edition,
+                post_cover = row.post.post_cover,
                 post_book_author = row.post.post_book_author,
                 thumb = None if row.thumb.id is None else row.thumb.thumb_state,
             ))
