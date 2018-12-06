@@ -242,4 +242,20 @@ var APP = null;
 
 // This will make everything accessible from the js console;
 // for instance, self.x above would be accessible as APP.x
+
+//Function to show or hide add post
+function show_hide_add_post() {
+    var x = document.getElementById("show_add_post");
+    var y = document.getElementById("show_hide_button");
+    var z = document.getElementById("show_hide_button2");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+        z.style.display = "block";
+    } else {
+        x.style.display = "none";
+        y.style.display = "block";
+        z.style.display = "none";
+    }
+}
 jQuery(function(){APP = app();});

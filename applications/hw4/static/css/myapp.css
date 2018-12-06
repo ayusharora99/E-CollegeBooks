@@ -63,16 +63,25 @@ div.sorting {
 span.sorting_title{
   padding:10px;
   text-decoration:underline;
+  font-weight:bold;
 }
 
 
 /* Add Post Section */
+div.add_post_title {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 div.add_post {
   background-color: white;
   margin: 5px;
   border: 2px black solid;
   width: 40%;
   border-radius: 25px;
+  font-weight:bold;
 }
 
 div.form_row {
@@ -85,5 +94,12 @@ div.form_row {
 div.new_post_fields {
   border: 1px black solid;
   width: 99%;
-  
+}
+
+button.show_hide_button {
+  float:right;
+}
+
+button.show_hide_button2 {
+  float:right;
 }
