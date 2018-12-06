@@ -43,8 +43,8 @@ a:not(.btn):not(.noeffect):after {background-color:#ea4c89}
 }
 
 .adi_copy {
-   flex-basis: 50%;
-   width: 50%;
+   flex-basis: 65%;
+   width: 65%;
 }
 
 .adi_text {
