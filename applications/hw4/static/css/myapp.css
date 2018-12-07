@@ -97,6 +97,13 @@ div.new_post_fields {
   width: 99%;
 }
 
+div.cover_labels {
+  padding:8px;
+  display: inline-block; 
+  text-decoration:none !important;
+  font-weight:lighter !important;
+}
+
 button.show_hide_button {
   float:right;
 }

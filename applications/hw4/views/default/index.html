@@ -188,7 +188,13 @@
               Cover Type:
             </div>
             <div class="form new_post_fields">
-              <textarea v-model="form_cover" placeholder="choose the cover type"></textarea>
+              <!--<textarea v-model="form_cover" placeholder="choose the cover type"></textarea>-->
+              <div class="cover_labels">
+                <label for="hard">Hard</label>
+                <input type="radio" name="cover_type" id="hard" value="hard" v-model="form_cover">
+                <label for="soft">Soft</label>
+                <input type="radio" name="cover_type" id="soft" value="soft" v-model="form_cover">
+              </div>   
             </div>
           </div>
           

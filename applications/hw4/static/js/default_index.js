@@ -61,6 +61,7 @@ var app = function() {
                     post_cover: cover,
                     post_book_author: book_author,
                 };
+                console.log(cover);
                 self.vue.post_list.unshift(new_post);
                 // We re-enumerate the array.
                 self.process_posts();
