@@ -26,7 +26,7 @@
 </script>
 {{end}}
 
-<div class="container main_content">
+<div id="vue-div" class="container main_content">
     <h1 class="book_header">E-College Books</h1>
     <div class="container book_img_info">
       
@@ -38,25 +38,25 @@
           <div class="book_info">
                 <div class="post_div" v-for="post in post_list">
                     <div class="post_title">
-                      Title: <!--${post.post_title}-->
+                      Title: ${post.post_title}
                     </div>
                     <div class="post_content">
-                        Author: <!--${post.post_author}-->
+                        Author: ${post.post_author}
                     </div>
                     <div class="post_content">
-                        Edition: <!--${post.post_edition}-->
+                        Edition: ${post.post_edition}
                     </div>
                     <div class="post_content">
-                        Category: <!--${post.post_category}-->
+                        Category: ${post.post_category}
                     </div>
                     <div class="post_content">
-                        Cover Type: <!--${post.post_covertype}-->
+                        Cover Type: ${post.post_covertype}
                     </div>
                     <div class="post_content">
-                      Condition: <!--${post.post_condition}-->
+                      Condition: ${post.post_condition}
                     </div>
                     <div class="post_content">
-                        Price: <!--${post.post_price}-->
+                        Price: ${post.post_price}
                     </div>              
                 </div>
           </div>
@@ -69,4 +69,6 @@
 
 
 </div>
-</html>
+
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>
