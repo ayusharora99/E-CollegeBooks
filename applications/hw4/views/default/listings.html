@@ -1,0 +1,74 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+  var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
+  var edit_post_url = "{{=URL('api', 'edit_post', user_signature=True)}}";
+  var edit_comment_url = "{{=URL('api', 'edit_comment', user_signature=True)}}";
+  var get_post_list_url = "{{=URL('api', 'get_post_list')}}";
+  var sort_posts_url = "{{=URL('api', 'sort_posts')}}";
+  // Like callbacks.
+  var set_like_url = "{{=URL('api', 'set_like', user_signature=True)}}";
+  var get_likers_url = "{{=URL('api', 'get_likers')}}"
+  // Stars.
+  var set_stars_url = "{{=URL('api', 'set_stars', user_signature=True)}}";
+
+  var getCommentsUrl = "{{=URL('api', 'get_comments')}}";
+  var saveCommentUrl = "{{=URL('api', 'set_comments')}}";
+  var user_email = 'false'
+
+  var is_logged_in = "{{='false' if auth.user is None else 'true'}}";
+
+
+  var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";
+
+</script>
+{{end}}
+
+<div id="vue-div" class="container main_content">
+    <h1 class="book_header">E-College Books</h1>
+    <div class="container book_img_info">
+
+      <div class="third book_img_space">
+          <img class="book_img" src="http://127.0.0.1:8000/hw4/static/images/home.jpg" alt="image not found"></img>
+      </div>
+
+      <div class="half">
+          <div class="book_info">
+                <div class="post_div" v-for="post in post_list">
+                    <div class="post_title">
+                      Title: ${post.post_title}
+                    </div>
+                    <div class="post_content">
+                        Author: ${post.post_author}
+                    </div>
+                    <div class="post_content">
+                        Edition: ${post.post_edition}
+                    </div>
+                    <div class="post_content">
+                        Category: ${post.post_category}
+                    </div>
+                    <div class="post_content">
+                        Cover Type: ${post.post_covertype}
+                    </div>
+                    <div class="post_content">
+                      Condition: ${post.post_condition}
+                    </div>
+                    <div class="post_content">
+                        Price: ${post.post_price}
+                    </div>
+                    <div class="post_content">
+                       Contact Info: ${post.post_contact_info}
+                    </div>
+                </div>
+          </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>

@@ -33,7 +33,8 @@ db.define_table('post',
                 Field('post_id'),
                 Field('post_edition'),
                 Field('post_book_author'),
-                Field('post_cover')
+                Field('post_cover'),
+                Field('post_contact_info', default="hello"),
                 )
 
 

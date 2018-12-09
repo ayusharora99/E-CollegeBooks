@@ -9,8 +9,9 @@ def add_post():
         post_condition=request.vars.post_condition,
         post_category=request.vars.post_category,
         post_edition=request.vars.post_edition,
+        post_contact_info=request.vars.post_contact_info,
         post_cover=request.vars.post_cover,
-        post_book_author=request.vars.post_book_author
+        post_book_author=request.vars.post_book_author,
 
     )
     print request.vars.post_price;
@@ -59,6 +60,7 @@ def get_post_list():
                 post_edition = row.post_edition,
                 post_cover = row.post_cover,
                 post_book_author = row.post_book_author,
+                post_contact_info = row.post_contact_info,
                 thumb = None,
             ))
     else:
@@ -82,6 +84,7 @@ def get_post_list():
                 post_edition = row.post.post_edition,
                 post_cover = row.post.post_cover,
                 post_book_author = row.post.post_book_author,
+                post_contact_info = row.post.post_contact_info,
                 thumb = None if row.thumb.id is None else row.thumb.thumb_state,
             ))
     # For homogeneity, we always return a dictionary.
@@ -105,5 +108,3 @@ def get_logged_in_user():
    user = None if auth.user == None else auth.user.email
    print auth;
    return response.json(dict(user = user))
-
-   

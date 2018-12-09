@@ -26,6 +26,7 @@ var app = function() {
         var edition = self.vue.form_edition;
         var cover = self.vue.form_cover;
         var book_author = self.vue.form_book_author;
+        var contact_info = self.vue.form_contact_info;
         $.post(add_post_url,
             // Data we are sending.
             {
@@ -35,7 +36,8 @@ var app = function() {
                 post_category: self.vue.form_category,
                 post_edition: self.vue.form_edition,
                 post_cover: self.vue.form_cover,
-                post_book_author: self.vue.form_book_author
+                post_book_author: self.vue.form_book_author,
+                post_contact_info: self.vue.form_contact_info,
             },
             // What do we do when the post succeeds?
             function (data) {
@@ -49,7 +51,8 @@ var app = function() {
                 self.vue.form_category = "",
                 self.vue.form_edition = "",
                 self.vue.form_cover = "",
-                self.vue.form_book_author = "";
+                self.vue.form_book_author = "",
+                self.vue.form_contact_info = "";
                 // Adds the post to the list of posts.
                 var new_post = {
                     id: data.post_id,
@@ -60,6 +63,7 @@ var app = function() {
                     post_edition: edition,
                     post_cover: cover,
                     post_book_author: book_author,
+                    post_contact_info: contact_info,
                 };
                 console.log(cover);
                 self.vue.post_list.unshift(new_post);
@@ -128,7 +132,7 @@ var app = function() {
         console.log(self.vue.post_list[post_idx].id);
         $.post(delete_post_url,{
             post_id: self.vue.post_list[post_idx].id});
-        //Cheap window reload for now to get rid of post    
+        //Cheap window reload for now to get rid of post
         location.reload();
     };
 
@@ -214,7 +218,7 @@ var app = function() {
         });
     }
 
-    
+
 
     // Complete as needed.
     self.vue = new Vue({
@@ -232,6 +236,7 @@ var app = function() {
             form_book_author:"",
             form_sort: "",
             post_list: [],
+            form_contact_info: "",
             title_save_pending: false,
             user: null
         },
