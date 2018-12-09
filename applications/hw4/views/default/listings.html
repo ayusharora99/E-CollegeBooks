@@ -27,14 +27,10 @@
 {{end}}
 
 <div id="vue-div" class="container main_content">
-    <h1 class="book_header">E-College Books</h1>
+    <h1 class="book_header">Your E-College Books Listings</h1>
     <div class="container book_img_info">
 
-      <div class="third book_img_space">
-          <img class="book_img" src="http://127.0.0.1:8000/hw4/static/images/home.jpg" alt="image not found"></img>
-      </div>
-
-      <div class="half">
+      <div class="center half">
           <div class="book_info">
                 <div class="post_div" v-for="post in post_list">
                     <div class="post_title">
@@ -56,11 +52,13 @@
                       Condition: ${post.post_condition}
                     </div>
                     <div class="post_content">
-                        Price: ${post.post_price}
+                        Price: $ ${post.post_price}
                     </div>
                     <div class="post_content">
                        Contact Info: ${post.post_contact_info}
                     </div>
+                    <button> Edit Post</button>
+                    <button> Delete Post</button>
                 </div>
           </div>
 

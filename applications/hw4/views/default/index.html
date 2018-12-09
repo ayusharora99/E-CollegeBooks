@@ -219,6 +219,16 @@
             </div>
           </div>
 
+
+          <div class="container form_row">
+           <div class="label">
+             Contact Information:
+           </div>
+           <div class="form new_post_fields">
+             <textarea v-model="form_contact_info" placeholder="What is the best way to reach you?"></textarea>
+           </div>
+          </div>
+
           <div class="container form_row">
             <div class="submit">
                 <span>
@@ -226,14 +236,12 @@
                   <button id="show_hide_button2" class="show_hide_button2" onclick="show_hide_add_post()">Hide Form</button>
                 </span>
             </div>
-          </div>
+          </div>  
+
           <div class="container form_row">
-             <div class="submit">
-                <span>
-                   <button onclick="location.href='http://127.0.0.1:8000/hw4/default/listings'">View your Listings</button>
-                </span>
-             </div>
+             <button onclick="location.href='/hw4/default/listings'">View your Listings</button>
           </div>
+
       </div>
       <button id="show_hide_button" class="show_hide_button" onclick="show_hide_add_post()">Show Form</button>
   </div>

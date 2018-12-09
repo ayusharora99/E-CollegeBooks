@@ -16,6 +16,9 @@ def index():
 def book():
     return dict()
 
+def listings():
+    return dict()
+
 def user():
     """
     exposes:
@@ -52,5 +55,3 @@ def call():
     supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
     """
     return service()
-
-
