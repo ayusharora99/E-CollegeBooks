@@ -39,9 +39,16 @@ def edit_comment():
 
 def get_post_list():
     results = []
+    # sortingDict = {
+    #     "Alphabetical": "post_title",
+    #     "Price": "post_price",
+    #     "Category": "post_category"
+    # }
     user = None;
     sort_by = request.vars.sortBy;
-    query = request.vars.query;
+    # if sort_by not in sortingDict:
+    #     sort_by = "post_title"
+    query = request.vars.searchQuery;
     if auth.user is None:
         user = None;
         # Not logged in.
@@ -78,7 +85,6 @@ def get_post_list():
             ))
     else:
         user = auth.user.email;
-        print user
         # Logged in.
         rows = db().select(db.post.ALL, db.thumb.ALL,
                             left=[
@@ -87,8 +93,8 @@ def get_post_list():
                             orderby=~db.post.post_time)
         for row in rows:
             if query:
-                print query
-                if post.post_title == query:
+                if row.post.post_title == query:
+                    print query
                     results.append(dict(
                         id=row.post.id,
                         post_title=row.post.post_title,
@@ -118,6 +124,7 @@ def get_post_list():
                 ))
     # For homogeneity, we always return a dictionary.
     newlist = sorted(results, key=lambda k: k[sort_by])
+    print sort_by
     return response.json(dict(post_list=newlist, user_email=user))
 
 def get_comments():

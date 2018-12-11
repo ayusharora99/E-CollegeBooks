@@ -69,21 +69,24 @@ var app = function() {
         // If you put code here, it is run BEFORE the call comes back.
     };
 
-    self.get_posts = function(sortBy) {
+    self.get_posts = function(sortBy, searchQuery) {
         sortingDict = {
           Alphabetical: "post_title",
           Price: "post_price",
           Category: "post_category"
 
         }
-        console.log(sortBy)
         if (!sortBy) {
           sortBy = "post_title"
         } else {
           sortBy = sortingDict[sortBy]
         }
-        console.log(sortBy)
-        $.post(get_post_list_url, {sortBy: sortBy},
+        console.log(searchQuery)
+        varData = {
+          sortBy: sortBy,
+          searchQuery: searchQuery
+        }
+        $.post(get_post_list_url, varData,
             function(data) {
                 // I am assuming here that the server gives me a nice list
                 // of posts, all ready for display.
@@ -92,10 +95,8 @@ var app = function() {
                 self.vue.user = data.user;
                 // Post-processing.
                 self.process_posts();
-                console.log("I got my list");
             }
         );
-        console.log("I fired the get");
     };
 
     self.process_posts = function() {
@@ -180,6 +181,13 @@ var app = function() {
         $.post(edit_post_url, postBody);
         p.editing = false;
     }
+    self.search = function(searchQuery) {
+        var postBody = {
+          searchQuery: searchQuery
+        }
+        console.log("in search");
+        $.post(get_post_list_url, postBody);
+    }
 
     self.hideComments = function(post_idx) {
         self.vue.post_list[post_idx].showComments = false;
@@ -233,7 +241,8 @@ var app = function() {
             form_sort: "",
             post_list: [],
             title_save_pending: false,
-            user: null
+            user: null,
+            searchQuery: ""
         },
         methods: {
             add_post: self.add_post,
@@ -248,6 +257,7 @@ var app = function() {
             sortPosts: self.sortPosts,
             get_posts: self.get_posts,
             delete_post: self.delete_post,
+            search: self.search
         }
     });
 

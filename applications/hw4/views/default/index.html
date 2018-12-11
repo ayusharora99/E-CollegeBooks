@@ -68,9 +68,9 @@
     <div class="container">
         <div class="half search_bars">
           <div class="topnav" style="padding:15px;">
-            <span class="sorting_title">Please Enter A Key Word Into The Search Bar</span>
-            <input type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
-            <button style="margin:10px;">Search - (Not Working Yet)</button>
+            <span class="search_query">Please Enter A Key Word Into The Search Bar</span>
+            <input v-model="searchQuery" type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
+            <button v-on:click="get_posts(form_sort, searchQuery)"style="margin:10px;">Search - (Not Working Yet)</button>
           </div>
         </div>
         <div class="half sorting" style="padding:15px;">
@@ -81,7 +81,7 @@
             <option>Category</option>
             <option>Price</option>
             </select>
-          <button v-on:click="get_posts(form_sort)" style="margin:10px;">Sort</button>
+          <button v-on:click="get_posts(form_sort, searchQuery)" style="margin:10px;">Sort</button>
         </div>
     </div>
 
