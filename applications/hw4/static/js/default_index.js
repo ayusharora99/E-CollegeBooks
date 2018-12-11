@@ -26,6 +26,7 @@ var app = function() {
         var edition = self.vue.form_edition;
         var cover = self.vue.form_cover;
         var book_author = self.vue.form_book_author;
+        var number = self.vue.form_number;
         $.post(add_post_url,
             // Data we are sending.
             {
@@ -35,7 +36,8 @@ var app = function() {
                 post_category: self.vue.form_category,
                 post_edition: self.vue.form_edition,
                 post_cover: self.vue.form_cover,
-                post_book_author: self.vue.form_book_author
+                post_book_author: self.vue.form_book_author,
+                post_number: self.vue.form_number
             },
             // What do we do when the post succeeds?
             function (data) {
@@ -49,7 +51,8 @@ var app = function() {
                 self.vue.form_category = "",
                 self.vue.form_edition = "",
                 self.vue.form_cover = "",
-                self.vue.form_book_author = "";
+                self.vue.form_book_author = "",
+                self.vue.form_number = "";
                 // Adds the post to the list of posts.
                 var new_post = {
                     id: data.post_id,
@@ -60,6 +63,7 @@ var app = function() {
                     post_edition: edition,
                     post_cover: cover,
                     post_book_author: book_author,
+                    post_number: number
                 };
                 console.log(cover);
                 self.vue.post_list.unshift(new_post);
@@ -222,6 +226,11 @@ var app = function() {
         });
     }
 
+    self.assign_post_number = function (post_idx) {
+        self.vue.post_number = post_idx;
+        console.log("assigned id", post_idx);
+    }
+
 
 
     // Complete as needed.
@@ -238,8 +247,10 @@ var app = function() {
             form_edition:"",
             form_cover:"",
             form_book_author:"",
+            form_number:"",
             form_sort: "",
             post_list: [],
+            post_idx_number:"",
             title_save_pending: false,
             user: null,
             searchQuery: ""
@@ -257,7 +268,8 @@ var app = function() {
             sortPosts: self.sortPosts,
             get_posts: self.get_posts,
             delete_post: self.delete_post,
-            search: self.search
+            search: self.search,
+            assign_post_number: self.assign_post_number,
         }
     });
 
