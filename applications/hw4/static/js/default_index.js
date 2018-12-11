@@ -103,9 +103,9 @@ var app = function() {
         // or after we have gotten new posts.
         // We add the _idx attribute to the posts.
         enumerate(self.vue.post_list);
-        self.vue.post_list = self.vue.post_list.sort(function(a, b) {
-            return a.post_category - b.post_category;
-          })
+        // self.vue.post_list = self.vue.post_list.sort(function(a, b) {
+        //     return a.post_category - b.post_category;
+        //   })
         // We initialize the smile status to match the like.
         self.vue.post_list.map(function (e) {
             // I need to use Vue.set here, because I am adding a new watched attribute
@@ -128,7 +128,7 @@ var app = function() {
         console.log(self.vue.post_list[post_idx].id);
         $.post(delete_post_url,{
             post_id: self.vue.post_list[post_idx].id});
-        //Cheap window reload for now to get rid of post    
+        //Cheap window reload for now to get rid of post
         location.reload();
     };
 
@@ -214,7 +214,7 @@ var app = function() {
         });
     }
 
-    
+
 
     // Complete as needed.
     self.vue = new Vue({

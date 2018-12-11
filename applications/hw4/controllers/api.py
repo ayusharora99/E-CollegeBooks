@@ -43,8 +43,6 @@ def get_post_list():
     sort_by = request.vars.sortBy
     if auth.user is None:
         user = None;
-        print user
-        print 'hello'
         # Not logged in.
         rows = db().select(db.post.ALL, orderby=~db.post.post_time)
         for row in rows:
@@ -105,5 +103,3 @@ def get_logged_in_user():
    user = None if auth.user == None else auth.user.email
    print auth;
    return response.json(dict(user = user))
-
-   
