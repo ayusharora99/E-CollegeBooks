@@ -62,7 +62,7 @@
   </div>
 
 
-  
+
   <div id="vue-div" class="container display:none">
     <!--Search button functionality needs to be added here-->
     <div class="container">
@@ -82,7 +82,7 @@
             <option>Price</option>
             </select>
           <button v-on:click="get_posts(form_sort)" style="margin:10px;">Sort</button>
-        </div>  
+        </div>
     </div>
 
     <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
@@ -95,30 +95,30 @@
       <div class="post_title" style="font-weight:bold;">${post.post_title}</div>
       <div class="post_content" v-if="post.editing === false">
         Edition: ${post.post_edition}
-        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> 
+        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p>
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
         -->
       </div>
 
       <div class="post_content" v-if="post.editing === false">
         Price: $${post.post_price}
-        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> 
+        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p>
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
         -->
       </div>
-      
+
       <!--
       <div class="post_content" v-if="post.editing === false">
         Condition: ${post.post_condition}
-        <p v-if="post.post_author === logged_in_user">this is my post</p> 
+        <p v-if="post.post_author === logged_in_user">this is my post</p>
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
-        
+
       </div>
       -->
 
       <div class="post_content" v-if="post.editing === false">
         Category: ${post.post_category}
-        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p> 
+        <!-- <p v-if="post.post_author === logged_in_user">this is my post</p>
         <i v-if="post.post_author === logged_in_user" class="fa fa-pencil-square-o" id="edithover" v-on:click="editPost(post._idx)"></i>
         -->
       </div>
@@ -173,7 +173,7 @@
               <textarea v-model="form_price" placeholder="Enter the price of your book"></textarea>
             </div>
           </div>
-          
+
           <div class="container form_row">
             <div class="label">
               Condition:
@@ -194,10 +194,10 @@
                 <input type="radio" name="cover_type" id="hard" value="hard" v-model="form_cover">
                 <label for="soft">Soft</label>
                 <input type="radio" name="cover_type" id="soft" value="soft" v-model="form_cover">
-              </div>   
+              </div>
             </div>
           </div>
-          
+
           <div class="container form_row">
             <div class="label">
               Category:
@@ -224,7 +224,7 @@
                 <span>
                   <button id="add-post" v-on:click="add_post">Submit</button>
                   <button id="show_hide_button2" class="show_hide_button2" onclick="show_hide_add_post()">Hide Form</button>
-                </span>  
+                </span>
             </div>
           </div>
       </div>
