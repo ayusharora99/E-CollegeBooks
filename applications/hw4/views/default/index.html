@@ -73,6 +73,7 @@
             <span class="search_query" style="font-weight:bold;text-decoration:underline;">Please Enter A Key Word Into The Search Bar</span>
             <input v-model="searchQuery" type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
             <button v-on:click="get_posts(form_sort, searchQuery)"style="margin:10px;">Search</button>
+            <button v-on:click="get_posts('Alphabetical', '')" style="margin:10px;">Reset</button>
           </div>
         </div>
         <div class="half sorting" style="padding:15px;">
@@ -84,6 +85,7 @@
             <option>Price</option>
             </select>
           <button v-on:click="get_posts(form_sort, searchQuery)" style="margin:10px;">Sort</button>
+          <button v-on:click="get_posts('Alphabetical', '')" style="margin:10px;">Reset</button>
         </div>
     </div>
 
