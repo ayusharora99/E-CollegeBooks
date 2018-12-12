@@ -34,7 +34,9 @@ db.define_table('post',
                 Field('post_edition'),
                 Field('post_book_author'),
                 Field('post_cover'),
-                Field('post_number')
+                Field('post_number'),
+                Field('post_phone'),
+                Field('post_name'),
                 )
 
 db.define_table('saveindex',

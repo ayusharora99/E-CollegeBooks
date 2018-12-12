@@ -45,7 +45,7 @@
                         Title: ${post.post_title}
                         </div>
                         <div class="post_content">
-                            Author: ${post.post_author}
+                            Author: ${post.post_book_author}
                         </div>
                         <div class="post_content">
                             Edition: ${post.post_edition}
@@ -54,7 +54,7 @@
                             Category: ${post.post_category}
                         </div>
                         <div class="post_content">
-                            Cover Type: ${post.post_covertype}
+                            Cover Type: ${post.post_cover}
                         </div>
                         <div class="post_content">
                         Condition: ${post.post_condition}
@@ -66,9 +66,19 @@
                 </div>
           </div>
           
-          <div class="message_block">
-            (MESSAGE AREA)
-          </div>
+          <div class="post_div" v-for="post in post_list" v-if="post._idx == post_idx_number">
+                
+                        <div class="post_content">
+                            Name: ${post.post_name}
+                        </div>
+                        <div class="post_content">
+                            Email: ${post.post_author}
+                        </div>
+                        <div class="post_content">
+                            Phone: ${post.post_phone}
+                        </div>
+                
+            </div>    
       </div>
     </div>
 

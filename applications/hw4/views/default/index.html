@@ -24,11 +24,7 @@
   var is_logged_in = "{{='false' if auth.user is None else 'true'}}";
   var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";
 
-  function fn3 (args) {
-    location.href='http://127.0.0.1:8000/hw4/default/book';
-    assign_post_number(post._idx);
-
-  }
+  
 
 </script>
 {{end}}
@@ -197,9 +193,9 @@
               <!--<textarea v-model="form_cover" placeholder="choose the cover type"></textarea>-->
               <div class="cover_labels">
                 <label for="hard">Hard</label>
-                <input type="radio" name="cover_type" id="hard" value="hard" v-model="form_cover">
+                <input type="radio" name="cover_type" id="hard" value="Hard" v-model="form_cover">
                 <label for="soft">Soft</label>
-                <input type="radio" name="cover_type" id="soft" value="soft" v-model="form_cover">
+                <input type="radio" name="cover_type" id="soft" value="Soft" v-model="form_cover">
               </div>
             </div>
           </div>
@@ -224,6 +220,26 @@
               </select>
             </div>
           </div>
+
+          <!--CONTACT INFO-->
+          <div class="add_post_title">Contact Information</div>
+            <div class="container form_row">
+                <div class="label">
+                  Name:
+                </div>
+                <div class="form new_post_fields">
+                  <input v-model="form_name" placeholder="Enter your name"/>
+                </div>
+              </div>
+
+              <div class="container form_row">
+                  <div class="label">
+                    Phone:
+                  </div>
+                  <div class="form new_post_fields">
+                    <input v-model="form_phone" placeholder="Enter your phone number"/>
+                  </div>
+                </div>
 
           <div class="container form_row">
             <div class="submit">

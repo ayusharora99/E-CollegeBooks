@@ -19,7 +19,8 @@ var app = function() {
         $.web2py.disableElement($("#add-post"));
         var sent_title = self.vue.form_title; // Makes a copy
         var price = self.vue.form_price;
-        console.log(price);
+        var name = self.vue.form_name;
+        var phone = self.vue.form_phone;
         var condition = self.vue.form_condition;
         var category = self.vue.form_category;
         var edition = self.vue.form_edition;
@@ -31,6 +32,8 @@ var app = function() {
             {
                 post_title: self.vue.form_title,
                 post_price: self.vue.form_price,
+                post_name: self.vue.form_name,
+                post_phone: self.vue.form_phone,
                 post_condition: self.vue.form_condition,
                 post_category: self.vue.form_category,
                 post_edition: self.vue.form_edition,
@@ -46,6 +49,8 @@ var app = function() {
                 self.vue.form_title = "";
                 self.vue.form_content = "";
                 self.vue.form_price = "";
+                self.vue.form_name = "";
+                self.vue.form_phone = "";
                 self.vue.form_condition = "",
                 self.vue.form_category = "",
                 self.vue.form_edition = "",
@@ -57,6 +62,8 @@ var app = function() {
                     id: data.post_id,
                     post_title: sent_title,
                     post_price: price,
+                    post_name: name,
+                    post_phone: phone,
                     post_condition: condition,
                     post_category: category,
                     post_edition: edition,
@@ -246,6 +253,8 @@ var app = function() {
             form_title: "",
             form_content: "",
             form_price: "",
+            form_name: "",
+            form_phone: "",
             form_condition: "",
             form_category: "",
             form_edition:"",
