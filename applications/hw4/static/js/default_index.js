@@ -1,6 +1,5 @@
 // This is the js for the default/index.html view.
 var app = function() {
-
     var self = {};
 
     Vue.config.silent = false; // show all warnings
@@ -129,6 +128,16 @@ var app = function() {
         });
     };
 
+    //Saving post idx value to db 
+    self.assign_post_number = function (post_idx) {
+        console.log("hello")
+        $.post(save_post_number_url,{
+            savenumber: post_idx
+        });
+        console.log("assigned id", post_idx);
+        
+    };
+
     self.delete_post = function(post_idx) {
         console.log(self.vue.post_list[post_idx].id);
         $.post(delete_post_url,{
@@ -226,11 +235,6 @@ var app = function() {
         });
     }
 
-    self.assign_post_number = function (post_idx) {
-        self.vue.post_number = post_idx;
-        console.log("assigned id", post_idx);
-    }
-
 
 
     // Complete as needed.
@@ -270,16 +274,33 @@ var app = function() {
             delete_post: self.delete_post,
             search: self.search,
             assign_post_number: self.assign_post_number,
+            get_post_idx_number: self.get_post_index_number,
+            get_post_number_yo: self.get_post_number_yo
         }
+        
+        
     });
 
     // If we are logged in, shows the form to add posts.
     if (is_logged_in) {
         $("#add_post").show();
     }
+    self.get_post_number_yo = function() {
+        $.post(get_post_index_number_url,
+            function(data) {
+                // I am assuming here that the server gives me a nice list
+                // of posts, all ready for display.
+                self.vue.post_idx_number = data.number
+                // Post-processing.
+                self.process_posts();
+            }
+        );
+    }
 
     // Gets the posts.
     self.get_posts("Alphabetical");
+    self.get_post_number_yo();
+    
 
     return self;
 };
@@ -307,4 +328,5 @@ function show_hide_add_post() {
         z.style.display = "none";
     }
 }
+
 jQuery(function(){APP = app();});

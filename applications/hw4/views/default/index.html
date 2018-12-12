@@ -6,6 +6,8 @@
   var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
   var edit_post_url = "{{=URL('api', 'edit_post', user_signature=True)}}";
   var delete_post_url = "{{=URL('api', 'delete_post', user_signature=True)}}";
+  var save_post_number_url = "{{=URL('api', 'save_post_number', user_signature=True)}}";
+  var get_post_index_number_url = "{{=URL('api', 'get_post_index_number')}}";
   var edit_comment_url = "{{=URL('api', 'edit_comment', user_signature=True)}}";
   var get_post_list_url = "{{=URL('api', 'get_post_list')}}";
   var sort_posts_url = "{{=URL('api', 'sort_posts')}}";
@@ -20,9 +22,13 @@
   var user_email = 'false'
 
   var is_logged_in = "{{='false' if auth.user is None else 'true'}}";
-
-
   var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";
+
+  function fn3 (args) {
+    location.href='http://127.0.0.1:8000/hw4/default/book';
+    assign_post_number(post._idx);
+
+  }
 
 </script>
 {{end}}
@@ -129,8 +135,7 @@
       </div>
 
       <!-- Button to view post for more info -->
-      <button onclick="location.href='http://127.0.0.1:8000/hw4/default/book'">View Book!</button>
-      <button v-on:click="assign_post_number(post._idx)">TEST</button>
+      <button v-on:click="assign_post_number(post._idx); window.location='http://127.0.0.1:8000/hw4/default/book'">View More!</button>
       <button v-on:click="delete_post(post._idx)">Sold! (Delete)</button>
     </div>
   </div>

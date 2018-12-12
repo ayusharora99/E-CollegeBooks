@@ -11,6 +11,8 @@
   // Like callbacks.
   var set_like_url = "{{=URL('api', 'set_like', user_signature=True)}}";
   var get_likers_url = "{{=URL('api', 'get_likers')}}"
+  var get_post_index_number_url = "{{=URL('api', 'get_post_index_number')}}";
+
   // Stars.
   var set_stars_url = "{{=URL('api', 'set_stars', user_signature=True)}}";
 
@@ -23,6 +25,8 @@
 
   var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";
 
+
+ 
 </script>
 {{end}}
 
@@ -37,7 +41,6 @@
       <div class="half">
           <div class="book_info">
                 <div class="post_div" v-for="post in post_list" v-if="post._idx == post_idx_number">
-                    
                         <div class="post_title">
                         Title: ${post.post_title}
                         </div>

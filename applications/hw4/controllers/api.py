@@ -5,8 +5,8 @@ import time
 def add_post():
     post_id = db.post.insert(
         post_title=request.vars.post_title,
-        post_price=request.vars.post_price,
-        post_condition=request.vars.post_condition,
+         post_price=request.vars.post_price,
+         post_condition=request.vars.post_condition,
         post_category=request.vars.post_category,
         post_edition=request.vars.post_edition,
         post_cover=request.vars.post_cover,
@@ -19,12 +19,26 @@ def add_post():
     # We return the id of the new post, so we can insert it along all the others.
     return response.json(dict(post_id=post_id))
 
+def get_post_index_number():
+    number = db().select(db.saveindex.ALL)
+    for row in number:
+        print row.savenumber
+    # We return the id of the new post, so we can insert it along all the others.
+    return response.json(dict(number=row.savenumber))
+
 @auth.requires_signature()
 def edit_post():
  db(db.post.id == request.vars.post_id).update(
      post_title = request.vars.post_title,
      post_content = request.vars.post_content,
  )
+
+@auth.requires_signature()
+def save_post_number():  
+    temp = request.vars.savenumber
+    db(db.saveindex.id == 1).update(
+        savenumber = temp
+    )
 
 @auth.requires_signature()
 def delete_post():

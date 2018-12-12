@@ -37,6 +37,10 @@ db.define_table('post',
                 Field('post_number')
                 )
 
+db.define_table('saveindex',
+                Field('savenumber')
+                )
+
 
 # Thumbs
 db.define_table('thumb',
