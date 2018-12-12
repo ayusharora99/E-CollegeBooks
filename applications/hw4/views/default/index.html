@@ -70,7 +70,7 @@
     <div class="container">
         <div class="half search_bars">
           <div class="topnav" style="padding:15px;">
-            <span class="search_query">Please Enter A Key Word Into The Search Bar</span>
+            <span class="search_query" style="font-weight:bold;text-decoration:underline;">Please Enter A Key Word Into The Search Bar</span>
             <input v-model="searchQuery" type="text" placeholder="Search for books" style="margin:10px; width:95%; border: 1px black solid;">
             <button v-on:click="get_posts(form_sort, searchQuery)"style="margin:10px;">Search</button>
           </div>
@@ -78,7 +78,7 @@
         <div class="half sorting" style="padding:15px;">
             <span class="sorting_title">Select A Method To Sort By:</span>
             <select v-model="form_sort" style="border: 1px black solid;">
-            <option disabled value="">Sort By</option>
+            <option disabled value="">Choose a Method to Sort By</option>
             <option>Alphabetical</option>
             <option>Category</option>
             <option>Price</option>

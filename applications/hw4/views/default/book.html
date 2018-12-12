@@ -42,25 +42,32 @@
           <div class="book_info">
                 <div class="post_div" v-for="post in post_list" v-if="post._idx == post_idx_number">
                         <div class="post_title">
-                        Title: ${post.post_title}
+                            <span style="font-weight:bold">
+                                    Title:</span> ${post.post_title}
                         </div>
                         <div class="post_content">
-                            Author: ${post.post_book_author}
+                                <span style="font-weight:bold">
+                                    Author:</span> ${post.post_book_author}
                         </div>
                         <div class="post_content">
-                            Edition: ${post.post_edition}
+                                <span style="font-weight:bold">
+                                    Edition:</span> ${post.post_edition}
                         </div>
                         <div class="post_content">
-                            Category: ${post.post_category}
+                                <span style="font-weight:bold">
+                                    Category:</span> ${post.post_category}
                         </div>
                         <div class="post_content">
-                            Cover Type: ${post.post_cover}
+                                <span style="font-weight:bold">
+                                    Cover Type:</span> ${post.post_cover}
                         </div>
                         <div class="post_content">
-                        Condition: ${post.post_condition}
+                                <span style="font-weight:bold">
+                                    Condition:</span> ${post.post_condition}
                         </div>
                         <div class="post_content">
-                            Price: ${post.post_price}
+                                <span style="font-weight:bold">
+                                    Price:</span> ${post.post_price}
                         </div> 
                                 
                 </div>
@@ -69,13 +76,16 @@
           <div class="post_div" v-for="post in post_list" v-if="post._idx == post_idx_number">
                 
                         <div class="post_content">
-                            Name: ${post.post_name}
+                                <span style="font-weight:bold">
+                                    Name:</span> ${post.post_name}
                         </div>
                         <div class="post_content">
-                            Email: ${post.post_author}
+                                <span style="font-weight:bold">
+                                    Email:</span> ${post.post_author}
                         </div>
                         <div class="post_content">
-                            Phone: ${post.post_phone}
+                                <span style="font-weight:bold">
+                                    Phone:</span> ${post.post_phone}
                         </div>
                 
             </div>    
