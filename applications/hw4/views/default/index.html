@@ -23,6 +23,7 @@
 
   var is_logged_in = "{{='false' if auth.user is None else 'true'}}";
   var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";
+  var is_logged_in = "{{='false' if auth.user is None else 'true'}}";
 
   
 
@@ -56,7 +57,7 @@
      <div class="adi_copy">
         <h1 class="adi_heading" style="color:#6393D2; text-decoration:underline; text-shadow: 2px 2px  black; font-style: italic;">E-College Books</h1>
         <p class="adi_text" style="color:#511691;">The go to marketplace for all things textbook related.</p>
-        <div>
+        <div v-if="is_logged_in">
            <button class="adi_signup" onclick="location.href='http://127.0.0.1:8000/hw4/default/user/register?_next=/hw4/default/index'">Sign Up</button>
         </div>
      </div>
